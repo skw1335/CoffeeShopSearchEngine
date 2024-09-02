@@ -3,11 +3,12 @@ package types
 
 
 type User struct {
-  ID        int    `json:"id"`
-  FirstName string `json:"firstName"`
-  LastName  string `json:"lastName"`
-  Email     string `json:"email"`
-  Password  string `json:"-"`
+  ID        int       `json:"id"`
+  firstName string    `json:"firstName"`
+  lastName  string    `json:"lastName"`
+  email     string    `json:"email"`
+  password  string    `json:"-"`
+  createdAt time.Time `json:"createdAt"`
 }
 
 type CoffeeShop struct {
@@ -27,8 +28,8 @@ type Ratings struct {
   ID        int     `json:"id"`
   UserID    int     `json:"userId"`
   ShopID    int     `json:"shopId`
-  Ambiance  string  `json:"Ambiance rating"`
-  Coffee    string  `json:"Coffee rating"`
-  Overall   string  `json:"Overall rating"`
+  Ambiance  int  `json:"Ambiance rating"`
+  Coffee    int  `json:"Coffee rating"`
+  Overall   int  `json:"Overall rating"`
 }
 
