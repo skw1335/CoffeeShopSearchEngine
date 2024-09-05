@@ -1,43 +1,45 @@
 package main
 
 import (
-  "fmt"
-  "log"
-  "net/http"
-  "os"
-
-  "github.com/skw1335/CoffeeShopSearchEngine/Go_Backend/api"
+	"database/sql"
+	"fmt"
+	"log"
+  "github.com/golang-migrate/migrate/v4"
+    _ "github.com/golang-migrate/migrate/v4/database/mysql"
+    _ "github.com/golang-migrate/migrate/v4/source/github"
+	"github.com/go-sql-driver/mysql"
   "github.com/skw1335/CoffeeShopSearchEngine/Go_Backend/db"
 )
 
-var (
-	coffeeShops    = make(map[int]*CoffeeShop)
-	users          = make(map[int]*User)
-	mu             sync.RWMutex
-	nextUserID     = 1
-	nextCoffeeShopID = 1
-)
-
 func main() {
-  // load env variables
-  dbUser := os.Getenv("DB_USER")
-  dbPass := os.Getenv("DB_PASS")
-  dbHost := os.Getenv("DB_HOST")
-  dbName := os.Getenv("DB_NAME")
+		cfg := mysql.Config{
+		User:                 configs.Envs.DBUser,
+		Passwd:               configs.Envs.DBPassword,
+		Addr:                 configs.Envs.DBAddress,
+		DBName:               configs.Envs.DBName,
+		Net:                  "tcp",
+		AllowNativePasswords: true,
+		ParseTime:            true,
+	}
 
-  // initalize the database
-	connectionString := fmt.Sprintf("%s:%s@tcp(%s)/%s?parseTime=true", dbUser, dbPass, dbHost, dbName)
-  err := db.Init(connectionString)
-  if err != nil {
-    log.Fatal(err)
-  }
-  defer db.Close()
+	db, err := db.NewMySQLStorage(cfg)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-  // set up the routes
-  http.HandleFunc("/coffee-shop", api.handleCoffeeShop)
-  http.HandleFunc("/user/", api.handleUser)
+	initStorage(db)
 
-  fmt.PrintLn("Server is running on :8080")
-  log.Fatal(http.ListenAndServe(":8080", nil))
+	server := NewAPIServer(fmt.Sprintf(":%s", configs.Envs.Port), db)
+	if err := server.Run(); err != nil {
+		log.Fatal(err)
+	}
 }
 
+func initStorage(db *sql.DB) {
+	err := db.Ping()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println("DB: Successfully connected!")
+}

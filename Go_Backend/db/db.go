@@ -2,14 +2,39 @@ package db
 
 import (
   "database/sql"
-  "log"
+  "encoding/json"
+  "io/ioutil"
+  "path/filepath"
+  "github.com/skw1335/CoffeeShopSearchEngine/Go_Backend/types"
   _ "github.com/go-sql-driver/mysql"
+)
 
 var db *sql.DB
 var data []byte = []byte(`{}`)
 
+// function for loading the coffee shops in data.json
+func loadCoffeeShops() ([]types.CoffeeShop, error) {
+  var coffeeShops []types.CoffeeShop
+  
+  // Read the JSON file
+  data, err := ioutil.ReadFile(filepath.Join("..","..", "data.json"))
+  if err != nil {
+    return nil, err
+  }
+
+  // Unmarshal the JSON data into the coffeeShops slice
+  err = json.Unmarshal(data, &coffeeShops)
+  if err != nil {
+    return nil, err
+  }
+
+  return coffeeShops, nil
+}
 // Init initializes the database connection
-//
+
+
+
+
 func Init(connectionString string) error {
   var err error
   db, err = sql.Open("mysql", connectionString)
@@ -52,13 +77,6 @@ func initDB() error {
         -- We'll create the comments table after we load the coffee shop data.
     `)
 
-    // Load coffee shops from data.json
-    var coffeeShops []CoffeeShop
-    err = json.Unmarshal(data, &coffeeShops)
-    if err != nil {
-        return err
-    }
-
     // Create the comments table
     _, err = db.Exec(`
         CREATE TABLE IF NOT EXISTS comments (
@@ -86,6 +104,7 @@ func initDB() error {
     `)
 
     // Insert coffee shops into the database
+    coffeeShops, err := loadCoffeeShops() 
     for _, shop := range coffeeShops {
         _, err = db.Exec(`
             INSERT INTO coffee_shops (name) VALUES (?);

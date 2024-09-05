@@ -1,6 +1,8 @@
 package types
 
-
+import (
+  "time"
+)
 
 type User struct {
   ID        int       `json:"id"`
@@ -14,6 +16,7 @@ type User struct {
 type CoffeeShop struct {
   ID         int       `json:"id"`
   Name       string    `json:"name"`
+  Address    string    `json:"address"`
   Comments   []Comment `json:"comments"`
   Ratings    []Ratings `json:"ratings"`
 }

@@ -18,7 +18,7 @@ import json
 
 
 database = defaultdict(list)
-
+## this can be changed to anything after /maps/search/
 url_list = [ "https://www.google.com/maps/search/coffee+shop+in+boston/",  
    "https://www.google.com/maps/search/coffee+shop+in+brookline/",  
    "https://www.google.com/maps/search/coffee+shop+in+cambridge/",
@@ -29,10 +29,10 @@ Overall_database = {}
 driver = webdriver.Chrome()
 
 #function to add database rows to mysql database
-
+#function honestly doesn't need to exist, saving it just incase
 def insert_variables_into_table(ShopName, lat, lng, Reviews, Ratings, Address):
     try:
-        connection = mysql.connector.connect(host='localhost',database='overall_database',user='sam',password='Defisme1!')
+        connection = mysql.connector.connect(host='localhost',database='overall_database',user='sam',password='')
         cursor = connection.cursor()
         mySql_insert_query = """INSERT INTO boston (ShopName, lat, lng, Reviews, Ratings, Address) VALUES (%s, %s, %s, %s, %s, %s) """
         record = (ShopName, lat, lng, Reviews, Ratings, Address)
