@@ -33,7 +33,7 @@ def execute_query(connection, query):
         print(f"The error '{e}' occurred")
 
 # Read GeoJSON file
-with open('data.json') as file:
+with open('data_harvest/data.json') as file:
     geojson_data = json.load(file)
 
 #take password as CLI
@@ -50,31 +50,43 @@ if connection is None:
 create_table_query = """
 CREATE TABLE IF NOT EXISTS boston_coffee_shops (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255),
-    review  FLOAT,
-    ratings INT,
-    address VARCHAR(255),
-    latitude FLOAT,
-    longitude FLOAT
+    ShopName VARCHAR(255),
+    Review  FLOAT,
+    Ratings VARCHAR(255),
+    Address VARCHAR(255),
+    Latitude FLOAT,
+    Longitude FLOAT
 )
 """
 execute_query(connection, create_table_query)
 
+# function for inserting variables into table
+#
+# for some reason GeoJSON stores data in long, lat instead of lat, long. confusing!
+def insert_variables_into_table(connection, ShopName, Review, Ratings, Address, Longitude, Latitude):
+    try:
+        #connection = mysql.connector.connect(host='localhost',database='overall_database',user='root',password=db_password)
+        cursor = connection.cursor()
+        mySql_insert_query = """INSERT INTO boston_coffee_shops (ShopName, Review, Ratings, Address, Longitude, Latitude)  VALUES (%s, %s, %s, %s, %s, %s) """
+        record = (ShopName, Review, Ratings, Address, Longitude, Latitude)
+        cursor.execute(mySql_insert_query, record)
+        connection.commit()
+        print("Record inserted successfully into boston_coffee_shops table")
+
+    except mysql.connector.Error as error:
+        print("Failed to insert into MySQL table {}".format(error))
+
 # Insert data
 for feature in geojson_data['features']:
-    properties = json.dumps(feature['properties'])
-    geometry = json.dumps(feature['geometry'])
-
-    name = properties['key']
-    review  = properties['Review']
-    ratings = properties['Ratings']
-    address = properties['Address']
-    longitude, latitude = geometry['coordinates']
-
-    insert_query = """
-    INSERT INTO boston_coffee_shops (name, review, ratings, address, latitude, longitude)
-    VALUES (%s, %s, %s, %s, %s, %s) 
-    """
-    execute_query(connection, insert_query)
+    properties = feature['properties']
+    coordinates = feature['geometry']
+    name = properties["Name"]
+    review  = properties["Review"]
+    ratings = properties["Ratings"]
+    address = properties["Address"]
+    longitude = coordinates["coordinates"][0]
+    latitude = coordinates["coordinates"][1]
+    insert_variables_into_table(connection, name, review, ratings, address, longitude, latitude)
+     
 
 print("Data import completed")
