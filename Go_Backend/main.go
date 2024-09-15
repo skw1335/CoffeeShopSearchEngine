@@ -4,11 +4,10 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
-  "github.com/golang-migrate/migrate/v4"
-    _ "github.com/golang-migrate/migrate/v4/database/mysql"
-    _ "github.com/golang-migrate/migrate/v4/source/github"
 	"github.com/go-sql-driver/mysql"
+  "github.com/skw1335/CoffeeShopSearchEngine/Go_Backend/api"
   "github.com/skw1335/CoffeeShopSearchEngine/Go_Backend/db"
+  "github.com/skw1335/CoffeeShopSearchEngine/Go_Backend/configs"
 )
 
 func main() {

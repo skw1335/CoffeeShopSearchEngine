@@ -4,6 +4,7 @@ import (
   "time"
 )
 
+
 type User struct {
   ID        int       `json:"id"`
   firstName string    `json:"firstName"`
@@ -16,23 +17,30 @@ type User struct {
 type CoffeeShop struct {
   ID         int       `json:"id"`
   Name       string    `json:"name"`
-  Address    string    `json:"address"`
+  Rating     string    `json:"name"`
+  Reviews    string    `json:"reviews"`
+  Address    string    `json:"Address"`
+  latitude   float     `json:"latitude"`
+  longitude  float     `json:"longitude"`
   Comments   []Comment `json:"comments"`
-  Ratings    []Ratings `json:"ratings"`
+  Ratings    []Rating  `json:"ratings"`
 }
 
 type Comment struct {
-  UserID     int      `json:"userId"`
-  ShopID     string   `json:"shopId"`
-  Content    string   `json:"content"`
+  ID         int       `json:"id"`
+  UserID     int       `json:"userId"`
+  ShopID     string    `json:"shopId"`
+  Content    string    `json:"content"`
+  CreatedAt  time.Time `json:"created_at"`
 }
 
-type Ratings struct {
-  ID        int     `json:"id"`
-  UserID    int     `json:"userId"`
-  ShopID    int     `json:"shopId`
-  Ambiance  int  `json:"Ambiance rating"`
-  Coffee    int  `json:"Coffee rating"`
-  Overall   int  `json:"Overall rating"`
+type Rating struct {
+  ID        int       `json:"id"`
+  UserID    int       `json:"userId"`
+  ShopID    int       `json:"shopId`
+  Ambiance  string    `json:"Ambiance_rating"`
+  Coffee    string    `json:"Coffee_rating"`
+  Overall   string    `json:"Overall_rating"`
+  CreatedAt time.Time `json:"created_at"`
 }
 

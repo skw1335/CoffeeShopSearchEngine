@@ -1,89 +1,27 @@
-package main
+package routes_and_storage 
 
 import (
-  "encoding/json"
-  "net/http"
-  "strconv"
-  "strings"
- 
-  "github.com/skw1335/CoffeeShopSearchEngine/Go_Backend/db"
-  "github.com/skw1335/CoffeeShopSearchEngine/Go_Backend/types"
-  _ "github.com/go-sql-driver/mysql"
+    "database/sql"
+    "fmt"
+    "net/http"
+
+    "github.com/skw1335/CoffeeShopSearchEngine/Go_Backend/types"
+    
 )
 
-
-type APIServer struct {
-  addr string
+type Store struct {
+  db *sql.DB
 }
 
-func NewApiServer(addr string) *APIServer {
-  return &APIServer {
-    addr: addr,
-  }
+func NewStore(db *sql.DB) *Store {
+  return &Store{db: db}
 }
 
-func (s *APIServer) Run() error {
-  router := http.NewServerMux()
-  
-  // Get User
-  router.HandleFunc("GET users/{UserID}", func(w http.ResponseWriter, r *http.Request) { 
-    UserID := r.PathValue("UserID")
-    user, err := getUser(w, r, UserID)
-    if err != nil {
-        if errors.Is(err, "user not found") {
-          http.Error(w, err.Error(), http.StatusNotFound)
-        } else {
-            http.Error(w, err.Error(), http.StatusInternalServerError)
-        }
-      return
-  }
-  w.Header().Set("Content-Type", "application/json")
-  if err := json.NewEncoder(w).Encode(user); err != nil {
-    http.Error(w, err.Error(), http.StatusInternalServerError)
-    return
-    }
-  })
-  // Register a user
-  router.HandleFunc("POST /users/register", func(w http.ResponseWriter, r *http.Request) {
-    userID, err := registerUser(w, r)
-    if err != nil {
-      http.Error(w, err.Error(), http.StatusInternalServerError)
-      return
-    }
-})
-  // Get Coffee Shop
-  router.HandleFunc("GET coffee_shops/{ShopID}", func (w http.ResponseWriter, r *http.Request) {
-    ShopID := r.PathValue(ShopID)
-    getCoffeeShop(w, r, ShopID)
-    w.Write([]byte("Shop ID: " + ShopID))
-  }
-  // Post Comment
-  //
-  router.HandleFunc("POST /coffee-shop/{ShopID}/comments", func (w http.ResponseWriter, r *http.Request) {
-    ShopID := r.PathValue(ShopID)
-    addComment(w, r, ShopID)
-    w.Write([]byte("Shop ID: " + ShopID))
-  })
-  // Post Rating
-  //
-  router.HandleFunc("POST /coffee-shop/{ShopID}/rating")
-    ShopID := r.PathValue(ShopID)
-    addComment(w, r, ShopID)
-    w.Write([]byte("Shop ID: " + ShopID))
-
-  }
-    server := http.Server{
-    Addr: s.addr,
-    Handler: router,
-  }
-
-  log.Printf("Server running on %s," s.addr)
-}
 
 
 func getCoffeeShop(w http.ResponseWriter, r *http.Request, ShopID int) {
   var shop types.CoffeeShop
-  err := db.QueryRow("SELECT id, name FROM coffee_shops WHERE id = ?", ShopID).Scan(&shop.ID, &shop.name)
+  err := db.QueryRow("SELECT id, FROM coffee_shops WHERE id = ?", ShopID).Scan(&shop.ID, &shop.name)
   if err != nil {
     if err == sql.ErrNoRows {
       http.Error(w, "Coffee shop not found!", http.StatusNotFound)
@@ -94,7 +32,7 @@ func getCoffeeShop(w http.ResponseWriter, r *http.Request, ShopID int) {
   return
 }
 
-rows, err := db.Query("SELECT id, content FROM comments WHERE shop_id = ?", ShopID)
+rows, err := db.Query("SELECT shop_id, content FROM comments WHERE shop_id = ?", ShopID)
 if err != nil {
   http.Error(w, "Error retrieving comments", http.StatusInternalServerError)
   return
@@ -154,7 +92,7 @@ func registerUser(w http.ResponseWriter, r *http.Request) (int, error) {
   user.ID = int(id)
   w.Header().Set("Content-Type", "application/json") 
   w.WriteHeader(http.StatusCreated)
-  if err := json.NewEncoder(w).Encode(user) err != nil {
+  if err := json.NewEncoder(w).Encode(user); err != nil {
     return 0, fmt.Errorf("error encoding user response: %w", err)
   }
   
@@ -174,16 +112,15 @@ func getUser(w http.ResponseWriter, r *http.Request, UserID int) (*types.User, e
   return &user, nil
 }
 
-func addComment(w http.ResponseWriter, r *http.Request, ShopID, UserID int) (*types.Comment, error) {
+func addComment(w http.ResponseWriter, r *http.Request, ShopID int) (*types.Comment, error) {
   var comment types.Comment
   err := json.NewDecoder(r.Body).Decode(&comment)
   if err != nil {
     return nil, fmt.Errorf("Error with json decoding", err)
   }
 
-  comment.UserID = UserID
   comment.ShopID = ShopID
-  result, err := db.Exec("INSERT INTO comments (user_id, shop_id, content) VALUES (?, ?, ?)",
+  result, err := db.Exec("INSERT INTO comments (shop_id, content) VALUES (?, ?)",
     UserID, shopID, comment.Content)
   if err != nil {
     http.Error(w, "Error adding comment", http.StatusInternalServerError)
@@ -197,17 +134,16 @@ func addComment(w http.ResponseWriter, r *http.Request, ShopID, UserID int) (*ty
   json.NewEncoder(w).Encode(comment)
 }
 
-func addRating(w http.ResponseWriter, r *http.Request, UserID, ShopID int) (*types.Rating, error) {
+func addRating(w http.ResponseWriter, r *http.Request, ShopID int) (*types.Rating, error) {
   var rating types.Rating
   err := json.NewDecoder(r.Body).Decode(&rating)
   if err != nil {
     return nil, fmt.Errorf("Error with json decoding", err)
   }
  
-  comment.UserID = UserID
   comment.ShopID = ShopID
-  result, err := db.Exec("INSERT INTO ratings (user_id, shop_id, ambiance, coffee, overall) VALUES (?, ?, ?, ?, ?, ?)",
-    rating.UserID, ShopID, rating.Ambiance, rating.Coffee, rating.Overall)
+  result, err := db.Exec("INSERT INTO ratings (shop_id, ambiance, coffee, overall) VALUES ( ?, ?, ?, ?)",
+    ShopID, rating.Ambiance, rating.Coffee, rating.Overall)
   if err != nil {
     http.Error(w, "Error adding rating", http.StatusInternalServerError)
     return
@@ -216,9 +152,7 @@ func addRating(w http.ResponseWriter, r *http.Request, UserID, ShopID int) (*typ
   id, _ := result.LastInsertId()
   rating.ID = int(id)
 
-  w.WriteHEader(http.StatusCreated)
+  w.WriteHeader(http.StatusCreated)
   json.NewEncoder(w).Encode(rating)
 
 }
-
-

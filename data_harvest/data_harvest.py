@@ -101,11 +101,6 @@ def WebScraper(url):
 def WebScraper_iter():
     for url in url_list:
         WebScraper(url)
-    with open('Overall_database.csv', 'w') as f:
-        w = csv.writer(f)
-        for key, value in database.items():
-                w.writerow([key, value])
-                w.writerow("\n")
 
 WebScraper_iter()
 tmp = []

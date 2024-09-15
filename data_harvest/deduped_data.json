@@ -11,7 +11,7 @@
         ]
       },
       "properties": {
-        "key": "Capital One Caf\u00e9",
+        "Name": "Capital One Caf\u00e9",
         "Review": "4.4",
         "Ratings": "56",
         "Address": " 310 Harrison Ave"
@@ -27,26 +27,10 @@
         ]
       },
       "properties": {
-        "key": "Capital One Caf\u00e9",
+        "Name": "Capital One Caf\u00e9",
         "Review": "4.3",
         "Ratings": "53",
         "Address": " 57 Seaport Blvd"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.0626633,
-          42.3460322
-        ]
-      },
-      "properties": {
-        "key": "Capital One Caf\u00e9",
-        "Review": "4.4",
-        "Ratings": "56",
-        "Address": " 310 Harrison Ave"
       }
     },
     {
@@ -59,7 +43,7 @@
         ]
       },
       "properties": {
-        "key": "Gracenote Coffee Boston",
+        "Name": "Gracenote Coffee Boston",
         "Review": "4.7",
         "Ratings": "697",
         "Address": " 108 Lincoln St"
@@ -75,7 +59,7 @@
         ]
       },
       "properties": {
-        "key": "George Howell Coffee",
+        "Name": "George Howell Coffee",
         "Review": "4.6",
         "Ratings": "1,164",
         "Address": " 505 Washington St"
@@ -91,7 +75,7 @@
         ]
       },
       "properties": {
-        "key": "George Howell Coffee",
+        "Name": "George Howell Coffee",
         "Review": "4.1",
         "Ratings": "91",
         "Address": " Public Market 100 Hanover St"
@@ -107,7 +91,7 @@
         ]
       },
       "properties": {
-        "key": "Thinking Cup",
+        "Name": "Thinking Cup",
         "Review": "4.4",
         "Ratings": "1,824",
         "Address": " 165 Tremont St"
@@ -123,7 +107,7 @@
         ]
       },
       "properties": {
-        "key": "Thinking Cup",
+        "Name": "Thinking Cup",
         "Review": "4.4",
         "Ratings": "1,229",
         "Address": " 236 Hanover St"
@@ -139,7 +123,7 @@
         ]
       },
       "properties": {
-        "key": "Thinking Cup",
+        "Name": "Thinking Cup",
         "Review": "4.5",
         "Ratings": "1,810",
         "Address": " 85 Newbury St"
@@ -155,7 +139,7 @@
         ]
       },
       "properties": {
-        "key": "The Well Coffee House",
+        "Name": "The Well Coffee House",
         "Review": "4.7",
         "Ratings": "598",
         "Address": " 212 Washington St"
@@ -171,7 +155,7 @@
         ]
       },
       "properties": {
-        "key": "The Well Coffee House",
+        "Name": "The Well Coffee House",
         "Review": "4.9",
         "Ratings": "58",
         "Address": " 173 Border St"
@@ -187,7 +171,7 @@
         ]
       },
       "properties": {
-        "key": "Tradesman Coffee Shop and Lounge",
+        "Name": "Tradesman Coffee Shop and Lounge",
         "Review": "4.5",
         "Ratings": "745",
         "Address": " 58 Batterymarch St"
@@ -203,7 +187,7 @@
         ]
       },
       "properties": {
-        "key": "Render Coffee",
+        "Name": "Render Coffee",
         "Review": "4.5",
         "Ratings": "648",
         "Address": " 563 Columbus Ave APT 2"
@@ -219,23 +203,7 @@
         ]
       },
       "properties": {
-        "key": "Broadsheet Coffee Roasters",
-        "Review": "4.6",
-        "Ratings": "618",
-        "Address": " 100 Kirkland St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1072912,
-          42.3779491
-        ]
-      },
-      "properties": {
-        "key": "Broadsheet Coffee Roasters",
+        "Name": "Broadsheet Coffee Roasters",
         "Review": "4.6",
         "Ratings": "618",
         "Address": " 100 Kirkland St"
@@ -251,7 +219,7 @@
         ]
       },
       "properties": {
-        "key": "Phin Coffee House",
+        "Name": "Phin Coffee House",
         "Review": "4.8",
         "Ratings": "476",
         "Address": " 10 High St"
@@ -267,7 +235,7 @@
         ]
       },
       "properties": {
-        "key": "Jaho Coffee Roaster & Wine Bar",
+        "Name": "Jaho Coffee Roaster & Wine Bar",
         "Review": "4.4",
         "Ratings": "1,590",
         "Address": " 665 Washington St"
@@ -283,7 +251,7 @@
         ]
       },
       "properties": {
-        "key": "Jaho Coffee Roaster & Wine Bar",
+        "Name": "Jaho Coffee Roaster & Wine Bar",
         "Review": "4.4",
         "Ratings": "658",
         "Address": " 1651 Washington St"
@@ -299,23 +267,7 @@
         ]
       },
       "properties": {
-        "key": "Jaho Coffee Roaster & Wine Bar",
-        "Review": "4.2",
-        "Ratings": "636",
-        "Address": " 116 Huntington Ave"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.0796516,
-          42.346812
-        ]
-      },
-      "properties": {
-        "key": "Jaho Coffee Roaster & Wine Bar",
+        "Name": "Jaho Coffee Roaster & Wine Bar",
         "Review": "4.2",
         "Ratings": "636",
         "Address": " 116 Huntington Ave"
@@ -331,7 +283,7 @@
         ]
       },
       "properties": {
-        "key": "Jaho Coffee Roaster & Wine Bar",
+        "Name": "Jaho Coffee Roaster & Wine Bar",
         "Review": "4.7",
         "Ratings": "310",
         "Address": " 425 Massachusetts Ave"
@@ -347,7 +299,7 @@
         ]
       },
       "properties": {
-        "key": "Farmers Horse Coffee",
+        "Name": "Farmers Horse Coffee",
         "Review": "4.6",
         "Ratings": "445",
         "Address": " 374 Massachusetts Ave"
@@ -363,7 +315,7 @@
         ]
       },
       "properties": {
-        "key": "Ogawa Coffee",
+        "Name": "Ogawa Coffee",
         "Review": "4.5",
         "Ratings": "1,361",
         "Address": " 10 Milk St"
@@ -379,39 +331,7 @@
         ]
       },
       "properties": {
-        "key": "Cicada",
-        "Review": "4.5",
-        "Ratings": "511",
-        "Address": " 106 Prospect St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1020615,
-          42.3676927
-        ]
-      },
-      "properties": {
-        "key": "Cicada",
-        "Review": "4.5",
-        "Ratings": "511",
-        "Address": " 106 Prospect St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1020615,
-          42.3676927
-        ]
-      },
-      "properties": {
-        "key": "Cicada",
+        "Name": "Cicada",
         "Review": "4.5",
         "Ratings": "511",
         "Address": " 106 Prospect St"
@@ -427,23 +347,7 @@
         ]
       },
       "properties": {
-        "key": "Koko Coffee",
-        "Review": "4.4",
-        "Ratings": "121",
-        "Address": " 255 State St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.0513252,
-          42.3591826
-        ]
-      },
-      "properties": {
-        "key": "Koko Coffee",
+        "Name": "Koko Coffee",
         "Review": "4.4",
         "Ratings": "121",
         "Address": " 255 State St"
@@ -459,7 +363,7 @@
         ]
       },
       "properties": {
-        "key": "Caffe Vittoria",
+        "Name": "Caffe Vittoria",
         "Review": "4.3",
         "Ratings": "2,123",
         "Address": " 290-296 Hanover St"
@@ -475,23 +379,7 @@
         ]
       },
       "properties": {
-        "key": "Esthetic Bean Coffee Shop",
-        "Review": "4.9",
-        "Ratings": "141",
-        "Address": " 16 Preble St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.0563602,
-          42.3295392
-        ]
-      },
-      "properties": {
-        "key": "Esthetic Bean Coffee Shop",
+        "Name": "Esthetic Bean Coffee Shop",
         "Review": "4.9",
         "Ratings": "141",
         "Address": " 16 Preble St"
@@ -507,23 +395,7 @@
         ]
       },
       "properties": {
-        "key": "Kicco Italian Coffee",
-        "Review": "4.6",
-        "Ratings": "101",
-        "Address": " 1 Nashua St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.0634338,
-          42.3659167
-        ]
-      },
-      "properties": {
-        "key": "Kicco Italian Coffee",
+        "Name": "Kicco Italian Coffee",
         "Review": "4.6",
         "Ratings": "101",
         "Address": " 1 Nashua St"
@@ -539,7 +411,7 @@
         ]
       },
       "properties": {
-        "key": "Polcari\u2019s Coffee",
+        "Name": "Polcari\u2019s Coffee",
         "Review": "4.9",
         "Ratings": "282",
         "Address": " 105 Salem St"
@@ -555,7 +427,7 @@
         ]
       },
       "properties": {
-        "key": "Central Perk Coffee Co",
+        "Name": "Central Perk Coffee Co",
         "Review": "4.4",
         "Ratings": "239",
         "Address": " 205 Newbury St"
@@ -571,7 +443,7 @@
         ]
       },
       "properties": {
-        "key": "Gracenote Coffee",
+        "Name": "Gracenote Coffee",
         "Review": "4.8",
         "Ratings": "40",
         "Address": " 72 High St"
@@ -587,7 +459,7 @@
         ]
       },
       "properties": {
-        "key": "La Colombe Coffee Roasters",
+        "Name": "La Colombe Coffee Roasters",
         "Review": "4.6",
         "Ratings": "322",
         "Address": " 745 Atlantic Ave"
@@ -603,23 +475,7 @@
         ]
       },
       "properties": {
-        "key": "La Colombe Coffee Roasters",
-        "Review": "4.5",
-        "Ratings": "286",
-        "Address": " 29 Northern Ave"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.0471998,
-          42.3534188
-        ]
-      },
-      "properties": {
-        "key": "La Colombe Coffee Roasters",
+        "Name": "La Colombe Coffee Roasters",
         "Review": "4.5",
         "Ratings": "286",
         "Address": " 29 Northern Ave"
@@ -635,7 +491,7 @@
         ]
       },
       "properties": {
-        "key": "Lily\u2019s COFFEE & CAF\u00c9",
+        "Name": "Lily\u2019s COFFEE & CAF\u00c9",
         "Review": "4.7",
         "Ratings": "20",
         "Address": " 33 Arch St"
@@ -651,7 +507,7 @@
         ]
       },
       "properties": {
-        "key": "APM Coffee",
+        "Name": "APM Coffee",
         "Review": "4.4",
         "Ratings": "116",
         "Address": " 99 Kneeland St"
@@ -667,7 +523,7 @@
         ]
       },
       "properties": {
-        "key": "Blank Street Coffee",
+        "Name": "Blank Street Coffee",
         "Review": "4.3",
         "Ratings": "68",
         "Address": " 282 Cambridge St"
@@ -683,7 +539,7 @@
         ]
       },
       "properties": {
-        "key": "Blank Street Coffee",
+        "Name": "Blank Street Coffee",
         "Review": "4.9",
         "Ratings": "21",
         "Address": " 489 E Broadway"
@@ -699,7 +555,7 @@
         ]
       },
       "properties": {
-        "key": "Blank Street Coffee",
+        "Name": "Blank Street Coffee",
         "Review": "3.9",
         "Ratings": "83",
         "Address": " 647 Boylston St"
@@ -715,7 +571,7 @@
         ]
       },
       "properties": {
-        "key": "Blank Street Coffee",
+        "Name": "Blank Street Coffee",
         "Review": "3.5",
         "Ratings": "37",
         "Address": " 1380 Massachusetts Ave"
@@ -731,7 +587,7 @@
         ]
       },
       "properties": {
-        "key": "Pavement Coffeehouse - Symphony",
+        "Name": "Pavement Coffeehouse - Symphony",
         "Review": "4.3",
         "Ratings": "404",
         "Address": " 44 Gainsborough St"
@@ -747,7 +603,7 @@
         ]
       },
       "properties": {
-        "key": "PS Gourmet Coffee",
+        "Name": "PS Gourmet Coffee",
         "Review": "4.6",
         "Ratings": "267",
         "Address": " 106 Dorchester St"
@@ -763,39 +619,7 @@
         ]
       },
       "properties": {
-        "key": "Phinista Cafe",
-        "Review": "4.5",
-        "Ratings": "703",
-        "Address": " 96 Peterborough St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.099229,
-          42.343035
-        ]
-      },
-      "properties": {
-        "key": "Phinista Cafe",
-        "Review": "4.5",
-        "Ratings": "703",
-        "Address": " 96 Peterborough St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.099229,
-          42.343035
-        ]
-      },
-      "properties": {
-        "key": "Phinista Cafe",
+        "Name": "Phinista Cafe",
         "Review": "4.5",
         "Ratings": "703",
         "Address": " 96 Peterborough St"
@@ -811,23 +635,7 @@
         ]
       },
       "properties": {
-        "key": "Capitol Coffee House",
-        "Review": "4.4",
-        "Ratings": "303",
-        "Address": " 122 Bowdoin St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.0627373,
-          42.3589365
-        ]
-      },
-      "properties": {
-        "key": "Capitol Coffee House",
+        "Name": "Capitol Coffee House",
         "Review": "4.4",
         "Ratings": "303",
         "Address": " 122 Bowdoin St"
@@ -843,7 +651,7 @@
         ]
       },
       "properties": {
-        "key": "Caff\u00e8 Nero",
+        "Name": "Caff\u00e8 Nero",
         "Review": "4.1",
         "Ratings": "1,136",
         "Address": " 10 Summer St"
@@ -859,7 +667,7 @@
         ]
       },
       "properties": {
-        "key": "Caff\u00e8 Nero",
+        "Name": "Caff\u00e8 Nero",
         "Review": "4.4",
         "Ratings": "1,256",
         "Address": " 560 Washington St"
@@ -875,7 +683,7 @@
         ]
       },
       "properties": {
-        "key": "Caff\u00e8 Nero",
+        "Name": "Caff\u00e8 Nero",
         "Review": "4.4",
         "Ratings": "673",
         "Address": " 368 Congress St"
@@ -886,44 +694,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.0598366,
-          42.3552207
-        ]
-      },
-      "properties": {
-        "key": "Caff\u00e8 Nero",
-        "Review": "4.1",
-        "Ratings": "1,136",
-        "Address": " 10 Summer St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -71.1078549,
           42.3390673
         ]
       },
       "properties": {
-        "key": "Caff\u00e8 Nero",
-        "Review": "4.3",
-        "Ratings": "308",
-        "Address": " 360 Longwood Ave"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1078549,
-          42.3390673
-        ]
-      },
-      "properties": {
-        "key": "Caff\u00e8 Nero",
+        "Name": "Caff\u00e8 Nero",
         "Review": "4.3",
         "Ratings": "308",
         "Address": " 360 Longwood Ave"
@@ -939,7 +715,7 @@
         ]
       },
       "properties": {
-        "key": "Caff\u00e8 Nero",
+        "Name": "Caff\u00e8 Nero",
         "Review": "4.2",
         "Ratings": "321",
         "Address": " 1047 Commonwealth Ave"
@@ -955,7 +731,7 @@
         ]
       },
       "properties": {
-        "key": "Caff\u00e8 Nero",
+        "Name": "Caff\u00e8 Nero",
         "Review": "4.3",
         "Ratings": "555",
         "Address": " 733 Centre St"
@@ -971,7 +747,7 @@
         ]
       },
       "properties": {
-        "key": "Caff\u00e8 Nero",
+        "Name": "Caff\u00e8 Nero",
         "Review": "4.0",
         "Ratings": "678",
         "Address": " 589 Massachusetts Ave Cambridge"
@@ -987,7 +763,7 @@
         ]
       },
       "properties": {
-        "key": "Pavement Coffeehouse - Newbury",
+        "Name": "Pavement Coffeehouse - Newbury",
         "Review": "4.2",
         "Ratings": "629",
         "Address": " 286 Newbury St"
@@ -1003,7 +779,7 @@
         ]
       },
       "properties": {
-        "key": "Caff\u00e8 Paradiso",
+        "Name": "Caff\u00e8 Paradiso",
         "Review": "4.3",
         "Ratings": "663",
         "Address": " 255 Hanover St"
@@ -1019,23 +795,7 @@
         ]
       },
       "properties": {
-        "key": "Heidi\u2019s House of Coffee",
-        "Review": "4.9",
-        "Ratings": "17",
-        "Address": " 350 Longwood Ave"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1072353,
-          42.3386237
-        ]
-      },
-      "properties": {
-        "key": "Heidi\u2019s House of Coffee",
+        "Name": "Heidi\u2019s House of Coffee",
         "Review": "4.9",
         "Ratings": "17",
         "Address": " 350 Longwood Ave"
@@ -1051,7 +811,7 @@
         ]
       },
       "properties": {
-        "key": "For Five Coffee Boston",
+        "Name": "For Five Coffee Boston",
         "Review": "4.2",
         "Ratings": "50",
         "Address": " 200 State St"
@@ -1067,7 +827,7 @@
         ]
       },
       "properties": {
-        "key": "Travelmug Cafe",
+        "Name": "Travelmug Cafe",
         "Review": "4.9",
         "Ratings": "32",
         "Address": " 50 Liberty Drive"
@@ -1083,7 +843,7 @@
         ]
       },
       "properties": {
-        "key": "Sorelle Bakery & Cafe",
+        "Name": "Sorelle Bakery & Cafe",
         "Review": "4.3",
         "Ratings": "314",
         "Address": " 282 Congress St"
@@ -1099,7 +859,7 @@
         ]
       },
       "properties": {
-        "key": "Sorelle Bakery & Cafe",
+        "Name": "Sorelle Bakery & Cafe",
         "Review": "4.2",
         "Ratings": "360",
         "Address": " 100 City Square"
@@ -1115,7 +875,7 @@
         ]
       },
       "properties": {
-        "key": "Pavement Coffeehouse - Berklee",
+        "Name": "Pavement Coffeehouse - Berklee",
         "Review": "4.2",
         "Ratings": "458",
         "Address": " 1096 Boylston St"
@@ -1131,7 +891,7 @@
         ]
       },
       "properties": {
-        "key": "Intelligentsia Coffee Post Office Square Coffeebar",
+        "Name": "Intelligentsia Coffee Post Office Square Coffeebar",
         "Review": "4.3",
         "Ratings": "78",
         "Address": " 225 Franklin St"
@@ -1147,7 +907,7 @@
         ]
       },
       "properties": {
-        "key": "Revival Cafe+Kitchen",
+        "Name": "Revival Cafe+Kitchen",
         "Review": "4.4",
         "Ratings": "136",
         "Address": " 121 Devonshire St"
@@ -1163,23 +923,7 @@
         ]
       },
       "properties": {
-        "key": "Revival Cafe+Kitchen",
-        "Review": "4.6",
-        "Ratings": "361",
-        "Address": " 125 Cambridgepark Dr"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1458532,
-          42.3950478
-        ]
-      },
-      "properties": {
-        "key": "Revival Cafe+Kitchen",
+        "Name": "Revival Cafe+Kitchen",
         "Review": "4.6",
         "Ratings": "361",
         "Address": " 125 Cambridgepark Dr"
@@ -1195,7 +939,7 @@
         ]
       },
       "properties": {
-        "key": "Blue Bottle Coffee",
+        "Name": "Blue Bottle Coffee",
         "Review": "4.5",
         "Ratings": "89",
         "Address": " 113 Autumn Ln"
@@ -1211,7 +955,7 @@
         ]
       },
       "properties": {
-        "key": "Blue Bottle Coffee",
+        "Name": "Blue Bottle Coffee",
         "Review": "4.2",
         "Ratings": "458",
         "Address": " 800 Boylston St #25"
@@ -1227,7 +971,7 @@
         ]
       },
       "properties": {
-        "key": "Blue Bottle Coffee",
+        "Name": "Blue Bottle Coffee",
         "Review": "4.1",
         "Ratings": "261",
         "Address": " 163 Newbury St"
@@ -1243,7 +987,7 @@
         ]
       },
       "properties": {
-        "key": "Blue Bottle Coffee",
+        "Name": "Blue Bottle Coffee",
         "Review": "3.9",
         "Ratings": "173",
         "Address": " 33 Boylston St #3300"
@@ -1259,23 +1003,7 @@
         ]
       },
       "properties": {
-        "key": "Blue Bottle Coffee",
-        "Review": "4.3",
-        "Ratings": "488",
-        "Address": " 40 Bow St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1168585,
-          42.3714891
-        ]
-      },
-      "properties": {
-        "key": "Blue Bottle Coffee",
+        "Name": "Blue Bottle Coffee",
         "Review": "4.3",
         "Ratings": "488",
         "Address": " 40 Bow St"
@@ -1291,7 +1019,7 @@
         ]
       },
       "properties": {
-        "key": "Blue Bottle Coffee",
+        "Name": "Blue Bottle Coffee",
         "Review": "4.2",
         "Ratings": "267",
         "Address": " 88 Ames St"
@@ -1307,7 +1035,7 @@
         ]
       },
       "properties": {
-        "key": "Caffe Ducali",
+        "Name": "Caffe Ducali",
         "Review": "4.3",
         "Ratings": "65",
         "Address": " 289 Causeway St"
@@ -1323,7 +1051,7 @@
         ]
       },
       "properties": {
-        "key": "Flour Bakery + Cafe",
+        "Name": "Flour Bakery + Cafe",
         "Review": "4.6",
         "Ratings": "1,870",
         "Address": " 131 Clarendon St"
@@ -1339,23 +1067,7 @@
         ]
       },
       "properties": {
-        "key": "Flour Bakery + Cafe",
-        "Review": "4.6",
-        "Ratings": "536",
-        "Address": " 40 Erie St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1042062,
-          42.3577848
-        ]
-      },
-      "properties": {
-        "key": "Flour Bakery + Cafe",
+        "Name": "Flour Bakery + Cafe",
         "Review": "4.6",
         "Ratings": "536",
         "Address": " 40 Erie St"
@@ -1371,7 +1083,7 @@
         ]
       },
       "properties": {
-        "key": "Flour Bakery + Cafe",
+        "Name": "Flour Bakery + Cafe",
         "Review": "4.5",
         "Ratings": "916",
         "Address": " 114 Mt Auburn St"
@@ -1387,7 +1099,7 @@
         ]
       },
       "properties": {
-        "key": "Pressed Cafe",
+        "Name": "Pressed Cafe",
         "Review": "4.5",
         "Ratings": "630",
         "Address": " 105 Huntington Ave"
@@ -1403,7 +1115,7 @@
         ]
       },
       "properties": {
-        "key": "Pavement Coffeehouse - Fenway",
+        "Name": "Pavement Coffeehouse - Fenway",
         "Review": "4.3",
         "Ratings": "490",
         "Address": " 1334 Boylston St"
@@ -1419,7 +1131,7 @@
         ]
       },
       "properties": {
-        "key": "Berkeley Perk Cafe",
+        "Name": "Berkeley Perk Cafe",
         "Review": "4.6",
         "Ratings": "241",
         "Address": " 69 Berkeley St"
@@ -1435,7 +1147,7 @@
         ]
       },
       "properties": {
-        "key": "Caff\u00e8 Bene",
+        "Name": "Caff\u00e8 Bene",
         "Review": "4.3",
         "Ratings": "719",
         "Address": " 333 Massachusetts Ave"
@@ -1451,7 +1163,7 @@
         ]
       },
       "properties": {
-        "key": "Bean & Leaf Cafe",
+        "Name": "Bean & Leaf Cafe",
         "Review": "4.6",
         "Ratings": "161",
         "Address": " 20 Custom House St"
@@ -1467,7 +1179,7 @@
         ]
       },
       "properties": {
-        "key": "Caff\u00e8 dello Sport",
+        "Name": "Caff\u00e8 dello Sport",
         "Review": "4.4",
         "Ratings": "600",
         "Address": " 308 Hanover St"
@@ -1483,7 +1195,7 @@
         ]
       },
       "properties": {
-        "key": "Kohi Coffee Company",
+        "Name": "Kohi Coffee Company",
         "Review": "3.7",
         "Ratings": "32",
         "Address": " 40 Berkeley St"
@@ -1499,7 +1211,7 @@
         ]
       },
       "properties": {
-        "key": "Kohi Coffee Company",
+        "Name": "Kohi Coffee Company",
         "Review": "4.2",
         "Ratings": "290",
         "Address": " 130 Guest St"
@@ -1515,7 +1227,7 @@
         ]
       },
       "properties": {
-        "key": "Fabulist Cafe",
+        "Name": "Fabulist Cafe",
         "Review": "5.0",
         "Ratings": "14",
         "Address": " 50 Liberty Drive Suite 500"
@@ -1531,7 +1243,7 @@
         ]
       },
       "properties": {
-        "key": "Dudley Cafe",
+        "Name": "Dudley Cafe",
         "Review": "4.5",
         "Ratings": "411",
         "Address": " 15 Warren St"
@@ -1547,7 +1259,7 @@
         ]
       },
       "properties": {
-        "key": "Pavement Coffeehouse - BU",
+        "Name": "Pavement Coffeehouse - BU",
         "Review": "4.2",
         "Ratings": "345",
         "Address": " 736 Commonwealth Ave"
@@ -1563,7 +1275,7 @@
         ]
       },
       "properties": {
-        "key": "Caf\u00e9 26",
+        "Name": "Caf\u00e9 26",
         "Review": "4.4",
         "Ratings": "810",
         "Address": " 26 Temple Pl"
@@ -1579,7 +1291,7 @@
         ]
       },
       "properties": {
-        "key": "Greystone Cafe, Bakery, and Provisions",
+        "Name": "Greystone Cafe, Bakery, and Provisions",
         "Review": "4.5",
         "Ratings": "243",
         "Address": " 123 Appleton St"
@@ -1595,7 +1307,7 @@
         ]
       },
       "properties": {
-        "key": "Cafe Amalfi",
+        "Name": "Cafe Amalfi",
         "Review": "4.4",
         "Ratings": "259",
         "Address": " 5 Battery Wharf"
@@ -1611,7 +1323,7 @@
         ]
       },
       "properties": {
-        "key": "180 Cafe",
+        "Name": "180 Cafe",
         "Review": "4.6",
         "Ratings": "20",
         "Address": " 23 Edinboro St"
@@ -1627,7 +1339,7 @@
         ]
       },
       "properties": {
-        "key": "Tatte Bakery & Cafe | Emerson",
+        "Name": "Tatte Bakery & Cafe | Emerson",
         "Review": "4.4",
         "Ratings": "780",
         "Address": " 80 Boylston St"
@@ -1643,7 +1355,7 @@
         ]
       },
       "properties": {
-        "key": "Cafe Iterum",
+        "Name": "Cafe Iterum",
         "Review": "4.2",
         "Ratings": "164",
         "Address": " 11 Monsignor Albert A Jacobbe Rd"
@@ -1659,7 +1371,7 @@
         ]
       },
       "properties": {
-        "key": "Luma\u2019s Coffee Shop",
+        "Name": "Luma\u2019s Coffee Shop",
         "Review": "4.7",
         "Ratings": "3",
         "Address": " 1 Federal St"
@@ -1675,7 +1387,7 @@
         ]
       },
       "properties": {
-        "key": "1369 Coffee House",
+        "Name": "1369 Coffee House",
         "Review": "4.4",
         "Ratings": "653",
         "Address": " Inman Square 1369 Cambridge St"
@@ -1691,26 +1403,10 @@
         ]
       },
       "properties": {
-        "key": "1369 Coffee House",
+        "Name": "1369 Coffee House",
         "Review": "4.4",
         "Ratings": "774",
         "Address": " Central Square 757 Massachusetts Ave"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1003713,
-          42.3737842
-        ]
-      },
-      "properties": {
-        "key": "1369 Coffee House",
-        "Review": "4.4",
-        "Ratings": "653",
-        "Address": " Inman Square 1369 Cambridge St"
       }
     },
     {
@@ -1723,7 +1419,7 @@
         ]
       },
       "properties": {
-        "key": "Tatte Bakery & Cafe | One Boston Place",
+        "Name": "Tatte Bakery & Cafe | One Boston Place",
         "Review": "4.4",
         "Ratings": "715",
         "Address": " 201 Washington St"
@@ -1739,23 +1435,7 @@
         ]
       },
       "properties": {
-        "key": "Curio Coffee",
-        "Review": "4.7",
-        "Ratings": "650",
-        "Address": " 441 Cambridge St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.0835176,
-          42.3716232
-        ]
-      },
-      "properties": {
-        "key": "Curio Coffee",
+        "Name": "Curio Coffee",
         "Review": "4.7",
         "Ratings": "650",
         "Address": " 441 Cambridge St"
@@ -1771,7 +1451,7 @@
         ]
       },
       "properties": {
-        "key": "Jonquils Cafe and Bakery",
+        "Name": "Jonquils Cafe and Bakery",
         "Review": "4.7",
         "Ratings": "1,860",
         "Address": " 125 Newbury St"
@@ -1787,23 +1467,7 @@
         ]
       },
       "properties": {
-        "key": "Solid Ground Cafe",
-        "Review": "4.7",
-        "Ratings": "182",
-        "Address": " 742 Huntington Ave"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.10546,
-          42.3336876
-        ]
-      },
-      "properties": {
-        "key": "Solid Ground Cafe",
+        "Name": "Solid Ground Cafe",
         "Review": "4.7",
         "Ratings": "182",
         "Address": " 742 Huntington Ave"
@@ -1819,7 +1483,7 @@
         ]
       },
       "properties": {
-        "key": "Milk Street Cafe",
+        "Name": "Milk Street Cafe",
         "Review": "4.5",
         "Ratings": "443",
         "Address": " 50 Milk St"
@@ -1835,7 +1499,7 @@
         ]
       },
       "properties": {
-        "key": "Caffe Lil Italy",
+        "Name": "Caffe Lil Italy",
         "Review": "4.1",
         "Ratings": "143",
         "Address": " 178 Salem St"
@@ -1851,7 +1515,7 @@
         ]
       },
       "properties": {
-        "key": "Eagle Hill Cafe",
+        "Name": "Eagle Hill Cafe",
         "Review": "4.4",
         "Ratings": "124",
         "Address": " 65 Meridian St"
@@ -1867,7 +1531,7 @@
         ]
       },
       "properties": {
-        "key": "Reign Drink Lab",
+        "Name": "Reign Drink Lab",
         "Review": "4.7",
         "Ratings": "190",
         "Address": " 54 Old Colony Ave"
@@ -1883,7 +1547,7 @@
         ]
       },
       "properties": {
-        "key": "Josie Green's Marketplace, Home to the 16-Hour Cold Brew Coffee, with ZYN in Stock!",
+        "Name": "Josie Green's Marketplace, Home to the 16-Hour Cold Brew Coffee, with ZYN in Stock!",
         "Review": "4.7",
         "Ratings": "7",
         "Address": " Lobby 125 High St"
@@ -1899,7 +1563,7 @@
         ]
       },
       "properties": {
-        "key": "Tatte Bakery & Cafe | South Boston",
+        "Name": "Tatte Bakery & Cafe | South Boston",
         "Review": "4.3",
         "Ratings": "128",
         "Address": " 60 Old Colony Ave"
@@ -1915,7 +1579,7 @@
         ]
       },
       "properties": {
-        "key": "Caf\u00e9 One",
+        "Name": "Caf\u00e9 One",
         "Review": "5.0",
         "Ratings": "3",
         "Address": " Inside Lobby of One Congress 1 Congress St"
@@ -1931,7 +1595,7 @@
         ]
       },
       "properties": {
-        "key": "Brothers & Sisters Co.",
+        "Name": "Brothers & Sisters Co.",
         "Review": "4.5",
         "Ratings": "414",
         "Address": " 7 Station St"
@@ -1947,7 +1611,7 @@
         ]
       },
       "properties": {
-        "key": "Clear Flour Coffee Bar",
+        "Name": "Clear Flour Coffee Bar",
         "Review": "4.7",
         "Ratings": "20",
         "Address": " 180 Thorndike St"
@@ -1963,7 +1627,7 @@
         ]
       },
       "properties": {
-        "key": "Bakey",
+        "Name": "Bakey",
         "Review": "4.7",
         "Ratings": "128",
         "Address": " 370 Harvard St"
@@ -1979,7 +1643,7 @@
         ]
       },
       "properties": {
-        "key": "Meet Point Patisserie",
+        "Name": "Meet Point Patisserie",
         "Review": "4.9",
         "Ratings": "55",
         "Address": " 3 Kendall St"
@@ -1995,7 +1659,7 @@
         ]
       },
       "properties": {
-        "key": "Cafe Fixe",
+        "Name": "Cafe Fixe",
         "Review": "4.2",
         "Ratings": "357",
         "Address": " 1642 Beacon St"
@@ -2011,23 +1675,7 @@
         ]
       },
       "properties": {
-        "key": "Cafe Landwer Audubon Circle",
-        "Review": "4.4",
-        "Ratings": "1,250",
-        "Address": " 900 Beacon St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.105705,
-          42.346813
-        ]
-      },
-      "properties": {
-        "key": "Cafe Landwer Audubon Circle",
+        "Name": "Cafe Landwer Audubon Circle",
         "Review": "4.4",
         "Ratings": "1,250",
         "Address": " 900 Beacon St"
@@ -2043,23 +1691,7 @@
         ]
       },
       "properties": {
-        "key": "Lakon Paris Patisserie",
-        "Review": "4.1",
-        "Ratings": "184",
-        "Address": " 1410 Beacon St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1253914,
-          42.3413497
-        ]
-      },
-      "properties": {
-        "key": "Lakon Paris Patisserie",
+        "Name": "Lakon Paris Patisserie",
         "Review": "4.1",
         "Ratings": "184",
         "Address": " 1410 Beacon St"
@@ -2075,23 +1707,7 @@
         ]
       },
       "properties": {
-        "key": "CR\u00c9MEUX French P\u00e2tisserie",
-        "Review": "4.6",
-        "Ratings": "86",
-        "Address": " 240 Harvard St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1212063,
-          42.3411838
-        ]
-      },
-      "properties": {
-        "key": "CR\u00c9MEUX French P\u00e2tisserie",
+        "Name": "CR\u00c9MEUX French P\u00e2tisserie",
         "Review": "4.6",
         "Ratings": "86",
         "Address": " 240 Harvard St"
@@ -2107,23 +1723,7 @@
         ]
       },
       "properties": {
-        "key": "Life Alive Organic Cafe Brookline",
-        "Review": "4.4",
-        "Ratings": "514",
-        "Address": " 888 Commonwealth Ave"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1153005,
-          42.3507575
-        ]
-      },
-      "properties": {
-        "key": "Life Alive Organic Cafe Brookline",
+        "Name": "Life Alive Organic Cafe Brookline",
         "Review": "4.4",
         "Ratings": "514",
         "Address": " 888 Commonwealth Ave"
@@ -2139,7 +1739,7 @@
         ]
       },
       "properties": {
-        "key": "Rifrullo Cafe",
+        "Name": "Rifrullo Cafe",
         "Review": "4.7",
         "Ratings": "248",
         "Address": " 147 Cypress St"
@@ -2155,7 +1755,7 @@
         ]
       },
       "properties": {
-        "key": "Cafe Landwer Cleveland Circle",
+        "Name": "Cafe Landwer Cleveland Circle",
         "Review": "4.4",
         "Ratings": "840",
         "Address": " 383 Chestnut Hill Ave"
@@ -2171,7 +1771,7 @@
         ]
       },
       "properties": {
-        "key": "Temptations Cafe",
+        "Name": "Temptations Cafe",
         "Review": "4.1",
         "Ratings": "347",
         "Address": " 1350 Beacon St"
@@ -2187,7 +1787,7 @@
         ]
       },
       "properties": {
-        "key": "Glasser Coffee Co.",
+        "Name": "Glasser Coffee Co.",
         "Review": "4.8",
         "Ratings": "205",
         "Address": " 589 Washington St"
@@ -2203,7 +1803,7 @@
         ]
       },
       "properties": {
-        "key": "Japonaise Bakery & Cafe",
+        "Name": "Japonaise Bakery & Cafe",
         "Review": "4.7",
         "Ratings": "541",
         "Address": " 1020 Beacon St"
@@ -2219,7 +1819,7 @@
         ]
       },
       "properties": {
-        "key": "Martin's Coffee Shop",
+        "Name": "Martin's Coffee Shop",
         "Review": "4.4",
         "Ratings": "467",
         "Address": " 35 Harvard St"
@@ -2235,23 +1835,7 @@
         ]
       },
       "properties": {
-        "key": "Clear Flour Bread",
-        "Review": "4.8",
-        "Ratings": "765",
-        "Address": " 178 Thorndike St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1261235,
-          42.3500538
-        ]
-      },
-      "properties": {
-        "key": "Clear Flour Bread",
+        "Name": "Clear Flour Bread",
         "Review": "4.8",
         "Ratings": "765",
         "Address": " 178 Thorndike St"
@@ -2267,39 +1851,7 @@
         ]
       },
       "properties": {
-        "key": "Coffee Turco",
-        "Review": "4.5",
-        "Ratings": "219",
-        "Address": " 483 Cambridge St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1371361,
-          42.3538857
-        ]
-      },
-      "properties": {
-        "key": "Coffee Turco",
-        "Review": "4.5",
-        "Ratings": "219",
-        "Address": " 483 Cambridge St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1371361,
-          42.3538857
-        ]
-      },
-      "properties": {
-        "key": "Coffee Turco",
+        "Name": "Coffee Turco",
         "Review": "4.5",
         "Ratings": "219",
         "Address": " 483 Cambridge St"
@@ -2315,23 +1867,7 @@
         ]
       },
       "properties": {
-        "key": "Athan's Bakery",
-        "Review": "4.4",
-        "Ratings": "680",
-        "Address": " 1621 Beacon St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.134823,
-          42.3391938
-        ]
-      },
-      "properties": {
-        "key": "Athan's Bakery",
+        "Name": "Athan's Bakery",
         "Review": "4.4",
         "Ratings": "680",
         "Address": " 1621 Beacon St"
@@ -2347,23 +1883,7 @@
         ]
       },
       "properties": {
-        "key": "Glazed Bytes",
-        "Review": "4.9",
-        "Ratings": "200",
-        "Address": " 199 Boylston St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1756718,
-          42.3215125
-        ]
-      },
-      "properties": {
-        "key": "Glazed Bytes",
+        "Name": "Glazed Bytes",
         "Review": "4.9",
         "Ratings": "200",
         "Address": " 199 Boylston St"
@@ -2379,23 +1899,7 @@
         ]
       },
       "properties": {
-        "key": "Sultana's Bakery & Cafe",
-        "Review": "4.8",
-        "Ratings": "198",
-        "Address": " 1585 Commonwealth Ave"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1429916,
-          42.344269
-        ]
-      },
-      "properties": {
-        "key": "Sultana's Bakery & Cafe",
+        "Name": "Sultana's Bakery & Cafe",
         "Review": "4.8",
         "Ratings": "198",
         "Address": " 1585 Commonwealth Ave"
@@ -2411,7 +1915,7 @@
         ]
       },
       "properties": {
-        "key": "Pavement Coffeehouse - Brighton",
+        "Name": "Pavement Coffeehouse - Brighton",
         "Review": "4.3",
         "Ratings": "313",
         "Address": " 415 Western Ave"
@@ -2427,7 +1931,7 @@
         ]
       },
       "properties": {
-        "key": "Tatte Bakery & Cafe | Beacon St",
+        "Name": "Tatte Bakery & Cafe | Beacon St",
         "Review": "4.4",
         "Ratings": "1,020",
         "Address": " 1003 Beacon St"
@@ -2443,7 +1947,7 @@
         ]
       },
       "properties": {
-        "key": "Fuel America",
+        "Name": "Fuel America",
         "Review": "4.4",
         "Ratings": "402",
         "Address": " 152 Chestnut Hill Ave"
@@ -2459,7 +1963,7 @@
         ]
       },
       "properties": {
-        "key": "Fuel America",
+        "Name": "Fuel America",
         "Review": "4.0",
         "Ratings": "25",
         "Address": " 1020 Commonwealth Ave"
@@ -2475,7 +1979,7 @@
         ]
       },
       "properties": {
-        "key": "Pavement Coffeehouse - Allston",
+        "Name": "Pavement Coffeehouse - Allston",
         "Review": "4.2",
         "Ratings": "328",
         "Address": " 1243 Commonwealth Ave"
@@ -2491,7 +1995,7 @@
         ]
       },
       "properties": {
-        "key": "Bruegger's Bagels",
+        "Name": "Bruegger's Bagels",
         "Review": "3.8",
         "Ratings": "330",
         "Address": " 253 Harvard St"
@@ -2507,7 +2011,7 @@
         ]
       },
       "properties": {
-        "key": "Bruegger's Bagels",
+        "Name": "Bruegger's Bagels",
         "Review": "4.1",
         "Ratings": "264",
         "Address": " 375 Longwood Ave"
@@ -2523,7 +2027,7 @@
         ]
       },
       "properties": {
-        "key": "BARE Blends",
+        "Name": "BARE Blends",
         "Review": "4.6",
         "Ratings": "31",
         "Address": " 1310 Beacon St"
@@ -2539,7 +2043,7 @@
         ]
       },
       "properties": {
-        "key": "Dunkin'",
+        "Name": "Dunkin'",
         "Review": "4.1",
         "Ratings": "300",
         "Address": " 265 Boylston St"
@@ -2555,7 +2059,7 @@
         ]
       },
       "properties": {
-        "key": "Dunkin'",
+        "Name": "Dunkin'",
         "Review": "3.7",
         "Ratings": "252",
         "Address": " 1316 Beacon St"
@@ -2571,7 +2075,7 @@
         ]
       },
       "properties": {
-        "key": "Dunkin'",
+        "Name": "Dunkin'",
         "Review": "3.4",
         "Ratings": "38",
         "Address": " 457 Brookline Ave Deaconess Hospital"
@@ -2587,7 +2091,7 @@
         ]
       },
       "properties": {
-        "key": "Dunkin'",
+        "Name": "Dunkin'",
         "Review": "3.7",
         "Ratings": "215",
         "Address": " 210 Harvard Ave"
@@ -2603,7 +2107,7 @@
         ]
       },
       "properties": {
-        "key": "Dunkin'",
+        "Name": "Dunkin'",
         "Review": "4.3",
         "Ratings": "136",
         "Address": " 61 Church St"
@@ -2619,7 +2123,7 @@
         ]
       },
       "properties": {
-        "key": "Dunkin'",
+        "Name": "Dunkin'",
         "Review": "3.8",
         "Ratings": "262",
         "Address": " 1 Broadway"
@@ -2635,7 +2139,7 @@
         ]
       },
       "properties": {
-        "key": "Dunkin'",
+        "Name": "Dunkin'",
         "Review": "4.1",
         "Ratings": "295",
         "Address": " 808 Memorial Dr"
@@ -2651,7 +2155,7 @@
         ]
       },
       "properties": {
-        "key": "Dunkin'",
+        "Name": "Dunkin'",
         "Review": "3.7",
         "Ratings": "184",
         "Address": " 65 John F. Kennedy St"
@@ -2667,7 +2171,7 @@
         ]
       },
       "properties": {
-        "key": "Dunkin'",
+        "Name": "Dunkin'",
         "Review": "3.9",
         "Ratings": "272",
         "Address": " 2480 Massachusetts Ave"
@@ -2683,7 +2187,7 @@
         ]
       },
       "properties": {
-        "key": "Dunkin'",
+        "Name": "Dunkin'",
         "Review": "3.1",
         "Ratings": "73",
         "Address": " 1001 Massachusetts Ave"
@@ -2699,7 +2203,7 @@
         ]
       },
       "properties": {
-        "key": "Dunkin'",
+        "Name": "Dunkin'",
         "Review": "3.7",
         "Ratings": "359",
         "Address": " 517 Concord Ave"
@@ -2715,7 +2219,7 @@
         ]
       },
       "properties": {
-        "key": "Dunkin'",
+        "Name": "Dunkin'",
         "Review": "3.5",
         "Ratings": "109",
         "Address": " 222 Broadway"
@@ -2731,7 +2235,7 @@
         ]
       },
       "properties": {
-        "key": "Dunkin'",
+        "Name": "Dunkin'",
         "Review": "4.0",
         "Ratings": "8",
         "Address": " Stratton Student Center 84 Massachusetts Ave"
@@ -2747,7 +2251,7 @@
         ]
       },
       "properties": {
-        "key": "Dunkin'",
+        "Name": "Dunkin'",
         "Review": "3.7",
         "Ratings": "213",
         "Address": " 1 White St"
@@ -2763,7 +2267,7 @@
         ]
       },
       "properties": {
-        "key": "Dunkin'",
+        "Name": "Dunkin'",
         "Review": "4.1",
         "Ratings": "81",
         "Address": " 219 Cambridge St In Speedway"
@@ -2779,7 +2283,7 @@
         ]
       },
       "properties": {
-        "key": "Dunkin'",
+        "Name": "Dunkin'",
         "Review": "3.2",
         "Ratings": "96",
         "Address": " 5 Cambridgepark Dr MBTA"
@@ -2795,7 +2299,7 @@
         ]
       },
       "properties": {
-        "key": "Dunkin'",
+        "Name": "Dunkin'",
         "Review": "3.4",
         "Ratings": "211",
         "Address": " 201 Alewife Brook Pkwy"
@@ -2811,23 +2315,7 @@
         ]
       },
       "properties": {
-        "key": "Starbucks",
-        "Review": "4.0",
-        "Ratings": "174",
-        "Address": " 874 Commonwealth Ave"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1145663,
-          42.3506277
-        ]
-      },
-      "properties": {
-        "key": "Starbucks",
+        "Name": "Starbucks",
         "Review": "4.0",
         "Ratings": "174",
         "Address": " 874 Commonwealth Ave"
@@ -2843,7 +2331,7 @@
         ]
       },
       "properties": {
-        "key": "Starbucks",
+        "Name": "Starbucks",
         "Review": "4.1",
         "Ratings": "261",
         "Address": " 1948 Beacon St"
@@ -2859,7 +2347,7 @@
         ]
       },
       "properties": {
-        "key": "Starbucks",
+        "Name": "Starbucks",
         "Review": "3.8",
         "Ratings": "233",
         "Address": " 364 Brookline Ave"
@@ -2875,7 +2363,7 @@
         ]
       },
       "properties": {
-        "key": "Starbucks",
+        "Name": "Starbucks",
         "Review": "4.3",
         "Ratings": "133",
         "Address": " 142-148 Brookline Ave"
@@ -2891,7 +2379,7 @@
         ]
       },
       "properties": {
-        "key": "Starbucks",
+        "Name": "Starbucks",
         "Review": "3.8",
         "Ratings": "169",
         "Address": " 183 Grove St"
@@ -2907,7 +2395,7 @@
         ]
       },
       "properties": {
-        "key": "Starbucks",
+        "Name": "Starbucks",
         "Review": "3.9",
         "Ratings": "204",
         "Address": " 210 Boylston St S/C"
@@ -2923,7 +2411,7 @@
         ]
       },
       "properties": {
-        "key": "Starbucks",
+        "Name": "Starbucks",
         "Review": "2.9",
         "Ratings": "22",
         "Address": " 1 Boylston St"
@@ -2939,7 +2427,7 @@
         ]
       },
       "properties": {
-        "key": "Starbucks",
+        "Name": "Starbucks",
         "Review": "3.9",
         "Ratings": "203",
         "Address": " 468 Broadway"
@@ -2955,7 +2443,7 @@
         ]
       },
       "properties": {
-        "key": "Starbucks",
+        "Name": "Starbucks",
         "Review": "4.1",
         "Ratings": "254",
         "Address": " 1662 Massachusetts Ave"
@@ -2971,7 +2459,7 @@
         ]
       },
       "properties": {
-        "key": "Starbucks",
+        "Name": "Starbucks",
         "Review": "4.0",
         "Ratings": "277",
         "Address": " 222 Alewife Brook Pkwy"
@@ -2987,7 +2475,7 @@
         ]
       },
       "properties": {
-        "key": "Starbucks",
+        "Name": "Starbucks",
         "Review": "3.1",
         "Ratings": "9",
         "Address": " 49 White St"
@@ -3003,7 +2491,7 @@
         ]
       },
       "properties": {
-        "key": "Drive-By Pies",
+        "Name": "Drive-By Pies",
         "Review": "4.7",
         "Ratings": "99",
         "Address": " 248A Cypress St"
@@ -3019,23 +2507,7 @@
         ]
       },
       "properties": {
-        "key": "Dash Cafe",
-        "Review": "4.6",
-        "Ratings": "253",
-        "Address": " 5 Henshaw St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1496947,
-          42.3494768
-        ]
-      },
-      "properties": {
-        "key": "Dash Cafe",
+        "Name": "Dash Cafe",
         "Review": "4.6",
         "Ratings": "253",
         "Address": " 5 Henshaw St"
@@ -3051,7 +2523,7 @@
         ]
       },
       "properties": {
-        "key": "Royaltea Brookline",
+        "Name": "Royaltea Brookline",
         "Review": "4.0",
         "Ratings": "103",
         "Address": " 1378b Beacon St"
@@ -3067,7 +2539,7 @@
         ]
       },
       "properties": {
-        "key": "When Pigs Fly Breads",
+        "Name": "When Pigs Fly Breads",
         "Review": "4.7",
         "Ratings": "182",
         "Address": " 1378 Beacon St"
@@ -3083,7 +2555,7 @@
         ]
       },
       "properties": {
-        "key": "In House Cafe",
+        "Name": "In House Cafe",
         "Review": "4.8",
         "Ratings": "260",
         "Address": " 132 Chestnut Hill Ave Unit 309"
@@ -3099,7 +2571,7 @@
         ]
       },
       "properties": {
-        "key": "J.P. Licks",
+        "Name": "J.P. Licks",
         "Review": "4.5",
         "Ratings": "768",
         "Address": " Coolidge Corner 311 Harvard St"
@@ -3115,7 +2587,7 @@
         ]
       },
       "properties": {
-        "key": "J.P. Licks",
+        "Name": "J.P. Licks",
         "Review": "4.5",
         "Ratings": "787",
         "Address": " 1312 Massachusetts Ave"
@@ -3131,7 +2603,7 @@
         ]
       },
       "properties": {
-        "key": "TBaar",
+        "Name": "TBaar",
         "Review": "4.5",
         "Ratings": "262",
         "Address": " 1038 Beacon St"
@@ -3147,7 +2619,7 @@
         ]
       },
       "properties": {
-        "key": "Zaftigs Delicatessen",
+        "Name": "Zaftigs Delicatessen",
         "Review": "4.4",
         "Ratings": "2,085",
         "Address": " 335 Harvard St"
@@ -3163,7 +2635,7 @@
         ]
       },
       "properties": {
-        "key": "Cafenation Cafe & Roastery",
+        "Name": "Cafenation Cafe & Roastery",
         "Review": "4.6",
         "Ratings": "359",
         "Address": " 380 Washington St"
@@ -3179,7 +2651,7 @@
         ]
       },
       "properties": {
-        "key": "Ula Caf\u00e9",
+        "Name": "Ula Caf\u00e9",
         "Review": "4.5",
         "Ratings": "544",
         "Address": " 284 Amory St"
@@ -3195,7 +2667,7 @@
         ]
       },
       "properties": {
-        "key": "The Brookline Pizza Spa",
+        "Name": "The Brookline Pizza Spa",
         "Review": "4.5",
         "Ratings": "486",
         "Address": " 75 Harvard St"
@@ -3211,7 +2683,7 @@
         ]
       },
       "properties": {
-        "key": "Maruichi Japanese Food & Deli",
+        "Name": "Maruichi Japanese Food & Deli",
         "Review": "4.6",
         "Ratings": "435",
         "Address": " 306 Harvard St"
@@ -3227,7 +2699,7 @@
         ]
       },
       "properties": {
-        "key": "Maruichi Select",
+        "Name": "Maruichi Select",
         "Review": "4.7",
         "Ratings": "138",
         "Address": " 299 Harvard St"
@@ -3243,7 +2715,7 @@
         ]
       },
       "properties": {
-        "key": "OneZo",
+        "Name": "OneZo",
         "Review": "3.7",
         "Ratings": "65",
         "Address": " 1376A Beacon St"
@@ -3259,7 +2731,7 @@
         ]
       },
       "properties": {
-        "key": "Panera Bread",
+        "Name": "Panera Bread",
         "Review": "4.3",
         "Ratings": "24",
         "Address": " 364 Brookline Ave"
@@ -3275,7 +2747,7 @@
         ]
       },
       "properties": {
-        "key": "Tous les Jours",
+        "Name": "Tous les Jours",
         "Review": "4.4",
         "Ratings": "518",
         "Address": " 152 Harvard Ave"
@@ -3291,7 +2763,7 @@
         ]
       },
       "properties": {
-        "key": "LimeRed Teahouse (Boston)",
+        "Name": "LimeRed Teahouse (Boston)",
         "Review": "4.5",
         "Ratings": "254",
         "Address": " 1092 Commonwealth Ave"
@@ -3307,7 +2779,7 @@
         ]
       },
       "properties": {
-        "key": "Esmai\u2019s Cafe & Restaurant",
+        "Name": "Esmai\u2019s Cafe & Restaurant",
         "Review": "4.6",
         "Ratings": "25",
         "Address": " 1306 Beacon St"
@@ -3323,7 +2795,7 @@
         ]
       },
       "properties": {
-        "key": "Boba Tea & Snow Ice House",
+        "Name": "Boba Tea & Snow Ice House",
         "Review": "4.5",
         "Ratings": "34",
         "Address": " 171 Amory St"
@@ -3339,7 +2811,7 @@
         ]
       },
       "properties": {
-        "key": "Eye Opener Cafe",
+        "Name": "Eye Opener Cafe",
         "Review": "5.0",
         "Ratings": "1",
         "Address": " 800 Huntington Ave"
@@ -3355,7 +2827,7 @@
         ]
       },
       "properties": {
-        "key": "Kupel's Bakery",
+        "Name": "Kupel's Bakery",
         "Review": "4.5",
         "Ratings": "877",
         "Address": " 421 Harvard St"
@@ -3371,7 +2843,7 @@
         ]
       },
       "properties": {
-        "key": "Clover Food Lab",
+        "Name": "Clover Food Lab",
         "Review": "4.4",
         "Ratings": "427",
         "Address": " 360 Longwood Ave"
@@ -3387,7 +2859,7 @@
         ]
       },
       "properties": {
-        "key": "Clover Food Lab",
+        "Name": "Clover Food Lab",
         "Review": "4.4",
         "Ratings": "962",
         "Address": " 496 Massachusetts Ave"
@@ -3403,7 +2875,7 @@
         ]
       },
       "properties": {
-        "key": "Clover Food Lab",
+        "Name": "Clover Food Lab",
         "Review": "4.3",
         "Ratings": "910",
         "Address": " 5 Cambridge Ctr"
@@ -3419,7 +2891,7 @@
         ]
       },
       "properties": {
-        "key": "Bottega di Capri",
+        "Name": "Bottega di Capri",
         "Review": "4.6",
         "Ratings": "669",
         "Address": " 41 Harvard St"
@@ -3435,7 +2907,7 @@
         ]
       },
       "properties": {
-        "key": "The Shared Tea",
+        "Name": "The Shared Tea",
         "Review": "4.4",
         "Ratings": "143",
         "Address": " 229 Washington St"
@@ -3451,7 +2923,7 @@
         ]
       },
       "properties": {
-        "key": "Knight Moves Cafe",
+        "Name": "Knight Moves Cafe",
         "Review": "4.7",
         "Ratings": "485",
         "Address": " 1402 Beacon St"
@@ -3467,7 +2939,7 @@
         ]
       },
       "properties": {
-        "key": "Monumental Market",
+        "Name": "Monumental Market",
         "Review": "5.0",
         "Ratings": "71",
         "Address": " 36 South St"
@@ -3483,7 +2955,7 @@
         ]
       },
       "properties": {
-        "key": "Sorriso Market",
+        "Name": "Sorriso Market",
         "Review": "4.8",
         "Ratings": "26",
         "Address": " 27 Harvard St"
@@ -3499,7 +2971,7 @@
         ]
       },
       "properties": {
-        "key": "Milkweed",
+        "Name": "Milkweed",
         "Review": "4.5",
         "Ratings": "1,498",
         "Address": " 1508 Tremont St"
@@ -3515,7 +2987,7 @@
         ]
       },
       "properties": {
-        "key": "Green Haus Cafe",
+        "Name": "Green Haus Cafe",
         "Review": "4.5",
         "Ratings": "95",
         "Address": " 1520 Tremont St"
@@ -3531,7 +3003,7 @@
         ]
       },
       "properties": {
-        "key": "Brooklines Heating & Air Conditioning Company",
+        "Name": "Brooklines Heating & Air Conditioning Company",
         "Review": "4.5",
         "Ratings": "865",
         "Address": " Brookline Public Safety Building 350 Washington St"
@@ -3547,7 +3019,7 @@
         ]
       },
       "properties": {
-        "key": "Brookline Lunch",
+        "Name": "Brookline Lunch",
         "Review": "4.8",
         "Ratings": "200",
         "Address": " 9 Brookline St"
@@ -3563,7 +3035,7 @@
         ]
       },
       "properties": {
-        "key": "Third Cliff Bakery",
+        "Name": "Third Cliff Bakery",
         "Review": "4.9",
         "Ratings": "170",
         "Address": " 3531 Washington St Suite 103"
@@ -3579,7 +3051,7 @@
         ]
       },
       "properties": {
-        "key": "The VU",
+        "Name": "The VU",
         "Review": "4.8",
         "Ratings": "77",
         "Address": " 3203 Washington St"
@@ -3595,7 +3067,7 @@
         ]
       },
       "properties": {
-        "key": "curds&co",
+        "Name": "curds&co",
         "Review": "3.8",
         "Ratings": "162",
         "Address": " 288 Washington St"
@@ -3611,7 +3083,7 @@
         ]
       },
       "properties": {
-        "key": "b\u014dm dough - restaurant and coffee shop",
+        "Name": "b\u014dm dough - restaurant and coffee shop",
         "Review": "4.6",
         "Ratings": "435",
         "Address": " Inman Square 1271 Cambridge St"
@@ -3627,23 +3099,7 @@
         ]
       },
       "properties": {
-        "key": "Cafe Beatrice",
-        "Review": "4.4",
-        "Ratings": "314",
-        "Address": " 100 N First St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.0755875,
-          42.3720431
-        ]
-      },
-      "properties": {
-        "key": "Cafe Beatrice",
+        "Name": "Cafe Beatrice",
         "Review": "4.4",
         "Ratings": "314",
         "Address": " 100 N First St"
@@ -3659,23 +3115,7 @@
         ]
       },
       "properties": {
-        "key": "Andala Coffee House",
-        "Review": "4.2",
-        "Ratings": "1,565",
-        "Address": " 286 Franklin St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.105797,
-          42.3647936
-        ]
-      },
-      "properties": {
-        "key": "Andala Coffee House",
+        "Name": "Andala Coffee House",
         "Review": "4.2",
         "Ratings": "1,565",
         "Address": " 286 Franklin St"
@@ -3691,7 +3131,7 @@
         ]
       },
       "properties": {
-        "key": "Simon's Coffee Shop",
+        "Name": "Simon's Coffee Shop",
         "Review": "4.5",
         "Ratings": "372",
         "Address": " 1736 Massachusetts Ave"
@@ -3707,7 +3147,7 @@
         ]
       },
       "properties": {
-        "key": "VESTER Cambridge",
+        "Name": "VESTER Cambridge",
         "Review": "4.4",
         "Ratings": "221",
         "Address": " 73 Ames St"
@@ -3723,7 +3163,7 @@
         ]
       },
       "properties": {
-        "key": "Gypsy Place Coffee and Juice Bar",
+        "Name": "Gypsy Place Coffee and Juice Bar",
         "Review": "4.6",
         "Ratings": "300",
         "Address": " 90 Hampshire St"
@@ -3739,7 +3179,7 @@
         ]
       },
       "properties": {
-        "key": "Cafe Zing",
+        "Name": "Cafe Zing",
         "Review": "4.7",
         "Ratings": "103",
         "Address": " 25 White St"
@@ -3755,7 +3195,7 @@
         ]
       },
       "properties": {
-        "key": "Pepita Coffee",
+        "Name": "Pepita Coffee",
         "Review": "4.6",
         "Ratings": "122",
         "Address": " 284 Broadway"
@@ -3771,7 +3211,7 @@
         ]
       },
       "properties": {
-        "key": "Cafe Luna",
+        "Name": "Cafe Luna",
         "Review": "4.5",
         "Ratings": "1,689",
         "Address": " 612 Main St"
@@ -3787,7 +3227,7 @@
         ]
       },
       "properties": {
-        "key": "Dudley Cafe - Cambridge",
+        "Name": "Dudley Cafe - Cambridge",
         "Review": "4.6",
         "Ratings": "25",
         "Address": " 1663 Massachusetts Ave"
@@ -3803,23 +3243,7 @@
         ]
       },
       "properties": {
-        "key": "Black Sheep Bagel Cafe",
-        "Review": "4.6",
-        "Ratings": "559",
-        "Address": " 56 John F. Kennedy St"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.1205636,
-          42.3718
-        ]
-      },
-      "properties": {
-        "key": "Black Sheep Bagel Cafe",
+        "Name": "Black Sheep Bagel Cafe",
         "Review": "4.6",
         "Ratings": "559",
         "Address": " 56 John F. Kennedy St"
@@ -3835,7 +3259,7 @@
         ]
       },
       "properties": {
-        "key": "Circus Cooperative Cafe",
+        "Name": "Circus Cooperative Cafe",
         "Review": "4.7",
         "Ratings": "73",
         "Address": " 31 Putnam Ave"
@@ -3851,7 +3275,7 @@
         ]
       },
       "properties": {
-        "key": "2nd Street Cafe",
+        "Name": "2nd Street Cafe",
         "Review": "4.7",
         "Ratings": "243",
         "Address": " 89 Second St #1"
@@ -3867,7 +3291,7 @@
         ]
       },
       "properties": {
-        "key": "Barismo",
+        "Name": "Barismo",
         "Review": "4.1",
         "Ratings": "344",
         "Address": " 364 Broadway"
@@ -3883,7 +3307,7 @@
         ]
       },
       "properties": {
-        "key": "Concord Avenue Cafe",
+        "Name": "Concord Avenue Cafe",
         "Review": "4.7",
         "Ratings": "71",
         "Address": " 294 Concord Ave"
@@ -3899,7 +3323,7 @@
         ]
       },
       "properties": {
-        "key": "Peet's Coffee",
+        "Name": "Peet's Coffee",
         "Review": "4.4",
         "Ratings": "620",
         "Address": " 100 Mt Auburn St"
@@ -3915,7 +3339,7 @@
         ]
       },
       "properties": {
-        "key": "Pralin\u00e9 French Patisserie",
+        "Name": "Pralin\u00e9 French Patisserie",
         "Review": "4.5",
         "Ratings": "202",
         "Address": " 6 Columbia St"
@@ -3931,7 +3355,7 @@
         ]
       },
       "properties": {
-        "key": "Little Luna Cafe",
+        "Name": "Little Luna Cafe",
         "Review": "4.3",
         "Ratings": "74",
         "Address": " 75 Binney St"
@@ -3947,7 +3371,7 @@
         ]
       },
       "properties": {
-        "key": "Sweet Touch Cafe",
+        "Name": "Sweet Touch Cafe",
         "Review": "4.5",
         "Ratings": "315",
         "Address": " 241 Cambridge St"
@@ -3963,7 +3387,7 @@
         ]
       },
       "properties": {
-        "key": "Ripple Cafe",
+        "Name": "Ripple Cafe",
         "Review": "4.2",
         "Ratings": "33",
         "Address": " 314 Main St"
@@ -3979,7 +3403,7 @@
         ]
       },
       "properties": {
-        "key": "Sarah's Market & Caf\u00e9",
+        "Name": "Sarah's Market & Caf\u00e9",
         "Review": "4.5",
         "Ratings": "312",
         "Address": " 200 Concord Ave"
@@ -3995,7 +3419,7 @@
         ]
       },
       "properties": {
-        "key": "Koko Coffee Cambridge",
+        "Name": "Koko Coffee Cambridge",
         "Review": "4.3",
         "Ratings": "3",
         "Address": " 100 Cambridgeside Pl Level 2"
@@ -4011,7 +3435,7 @@
         ]
       },
       "properties": {
-        "key": "Area Four (One Kendall Square)",
+        "Name": "Area Four (One Kendall Square)",
         "Review": "4.2",
         "Ratings": "18",
         "Address": " One Kendall Square Kendall Square"
@@ -4027,7 +3451,7 @@
         ]
       },
       "properties": {
-        "key": "Teaholic Bubble Tea & Coffee",
+        "Name": "Teaholic Bubble Tea & Coffee",
         "Review": "4.7",
         "Ratings": "107",
         "Address": " 205 Broadway"
@@ -4043,7 +3467,7 @@
         ]
       },
       "properties": {
-        "key": "Caffe Nero",
+        "Name": "Caffe Nero",
         "Review": "4.3",
         "Ratings": "202",
         "Address": " 1868 Massachusetts Ave"
@@ -4059,7 +3483,7 @@
         ]
       },
       "properties": {
-        "key": "Donut Villa Diner",
+        "Name": "Donut Villa Diner",
         "Review": "4.2",
         "Ratings": "388",
         "Address": " 20 Prospect St"
@@ -4075,7 +3499,7 @@
         ]
       },
       "properties": {
-        "key": "Tatte Bakery & Cafe | Main St",
+        "Name": "Tatte Bakery & Cafe | Main St",
         "Review": "4.5",
         "Ratings": "247",
         "Address": " 101 Main St"
@@ -4091,7 +3515,7 @@
         ]
       },
       "properties": {
-        "key": "Discovery Cafe",
+        "Name": "Discovery Cafe",
         "Review": "4.5",
         "Ratings": "62",
         "Address": " 157 6th St"
@@ -4107,7 +3531,7 @@
         ]
       },
       "properties": {
-        "key": "Caf\u00e9 Gato Rojo",
+        "Name": "Caf\u00e9 Gato Rojo",
         "Review": "4.5",
         "Ratings": "23",
         "Address": " 1351 Massachusetts Ave"
@@ -4123,7 +3547,7 @@
         ]
       },
       "properties": {
-        "key": "Pacific Street Cafe",
+        "Name": "Pacific Street Cafe",
         "Review": "4.0",
         "Ratings": "85",
         "Address": " 70 Pacific St"
@@ -4139,7 +3563,7 @@
         ]
       },
       "properties": {
-        "key": "Yego Coffee",
+        "Name": "Yego Coffee",
         "Review": "4.9",
         "Ratings": "223",
         "Address": " 1212 Broadway"
@@ -4155,7 +3579,7 @@
         ]
       },
       "properties": {
-        "key": "The Little Crepe Cafe",
+        "Name": "The Little Crepe Cafe",
         "Review": "4.5",
         "Ratings": "256",
         "Address": " 102 Oxford St"
@@ -4171,7 +3595,7 @@
         ]
       },
       "properties": {
-        "key": "Tatte Bakery & Cafe | Third St",
+        "Name": "Tatte Bakery & Cafe | Third St",
         "Review": "4.5",
         "Ratings": "1,972",
         "Address": " 318 Third St"
@@ -4187,7 +3611,7 @@
         ]
       },
       "properties": {
-        "key": "Pavement Coffeehouse - Harvard Sq.",
+        "Name": "Pavement Coffeehouse - Harvard Sq.",
         "Review": "3.8",
         "Ratings": "139",
         "Address": " Smith Campus Center 1350 Massachusetts Ave"
@@ -4203,7 +3627,7 @@
         ]
       },
       "properties": {
-        "key": "Tatte Bakery & Cafe | Cambridge Crossing",
+        "Name": "Tatte Bakery & Cafe | Cambridge Crossing",
         "Review": "4.5",
         "Ratings": "223",
         "Address": " 210 Jacobs St"
@@ -4219,7 +3643,7 @@
         ]
       },
       "properties": {
-        "key": "Tatte Bakery & Cafe | Harvard Square",
+        "Name": "Tatte Bakery & Cafe | Harvard Square",
         "Review": "4.4",
         "Ratings": "2,479",
         "Address": " 1288 Massachusetts Ave"
@@ -4235,7 +3659,7 @@
         ]
       },
       "properties": {
-        "key": "Bosworth's Cafe",
+        "Name": "Bosworth's Cafe",
         "Review": "4.2",
         "Ratings": "6",
         "Address": " Rm 7-111 77 Massachusetts Ave"
@@ -4251,7 +3675,7 @@
         ]
       },
       "properties": {
-        "key": "Hi-Rise Bread Company",
+        "Name": "Hi-Rise Bread Company",
         "Review": "4.2",
         "Ratings": "505",
         "Address": " 208 Concord Ave"
@@ -4267,7 +3691,7 @@
         ]
       },
       "properties": {
-        "key": "Paris Baguette",
+        "Name": "Paris Baguette",
         "Review": "3.8",
         "Ratings": "191",
         "Address": " 581 Massachusetts Ave"
@@ -4283,7 +3707,7 @@
         ]
       },
       "properties": {
-        "key": "La Saison Bakery",
+        "Name": "La Saison Bakery",
         "Review": "4.7",
         "Ratings": "320",
         "Address": " 407 Concord Ave"
@@ -4299,7 +3723,7 @@
         ]
       },
       "properties": {
-        "key": "Bluestone Lane Harvard Square Caf\u00e9",
+        "Name": "Bluestone Lane Harvard Square Caf\u00e9",
         "Review": "3.8",
         "Ratings": "363",
         "Address": " 27 Brattle St"
@@ -4315,7 +3739,7 @@
         ]
       },
       "properties": {
-        "key": "Bloc Cafe",
+        "Name": "Bloc Cafe",
         "Review": "4.4",
         "Ratings": "769",
         "Address": " 11 Bow St"
@@ -4331,7 +3755,7 @@
         ]
       },
       "properties": {
-        "key": "Sofra Bakery & Cafe",
+        "Name": "Sofra Bakery & Cafe",
         "Review": "4.6",
         "Ratings": "1,697",
         "Address": " 1 Belmont St"
@@ -4347,7 +3771,7 @@
         ]
       },
       "properties": {
-        "key": "Cafe Rustica",
+        "Name": "Cafe Rustica",
         "Review": "4.8",
         "Ratings": "365",
         "Address": " 356 Beacon St"
@@ -4363,7 +3787,7 @@
         ]
       },
       "properties": {
-        "key": "True Grounds",
+        "Name": "True Grounds",
         "Review": "4.5",
         "Ratings": "323",
         "Address": " 717 Broadway Ball Square"
@@ -4379,7 +3803,7 @@
         ]
       },
       "properties": {
-        "key": "Jenny's Cafe",
+        "Name": "Jenny's Cafe",
         "Review": "4.4",
         "Ratings": "19",
         "Address": " Harvard Art Museums Harvard University 32 Quincy St"
@@ -4395,7 +3819,7 @@
         ]
       },
       "properties": {
-        "key": "Maprang Bakery & Cafe",
+        "Name": "Maprang Bakery & Cafe",
         "Review": "4.9",
         "Ratings": "166",
         "Address": " 51 Union Square"

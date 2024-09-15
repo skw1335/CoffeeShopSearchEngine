@@ -33,7 +33,7 @@ def execute_query(connection, query):
         print(f"The error '{e}' occurred")
 
 # Read GeoJSON file
-with open('data_harvest/data.json') as file:
+with open('data_harvest/deduped_data.json') as file:
     geojson_data = json.load(file)
 
 #take password as CLI
