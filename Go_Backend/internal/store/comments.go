@@ -74,3 +74,23 @@ func (s *CommentsStore) GetByID(ctx context.Context, id int64) (*Comment, error)
     return &comment, nil
    
 }
+
+func (s *commentsStore) (cxt context.Context, postID int64) error {
+  query := `DELETE FROM posts WHERE id = $1`
+
+  res, err := s.db.ExecContext(query, cxt, postID)
+  if err != nil {
+    return err
+  }
+
+  rows, err := res.RowsAffected()
+  if err != nil {
+    return err
+  }
+
+  if rows == 0 {
+    return ErrNotFound
+  }
+
+  return nil
+} 

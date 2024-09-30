@@ -45,6 +45,50 @@ func (app *application) createCommentHandler(w http.ResponseWriter, r *http.Requ
 
 
 func (app *application) getCommentHandler(w http.ResponseWriter, r *http.Request) {
+  comment = getCommentFromCtx(r)
+
+  if err := writeJSON(w, http.StatusOK, comment); err != nil {
+    app.internalServerError(w, r, err)
+    return
+  }
+}
+
+func (app *application) deletePostHandler(w http.ResponseWriter, r *http.Request) {
+  idParam := chi.URLParam(r, "postID")
+  id, err := strconv.ParseInt(idParam, 10, 64)
+  if err != nil {
+    app.internalServerError(w, r, err)
+    return
+  }
+
+  ctx := r.Context()
+
+  if err := app.store.comments.Delete(ctx, id); err != nil {
+    switch {
+    case errors.Is(err, store.ErrNotFound):
+      app.notFoundResponse(w, r, err)
+    default:
+      app.internalServerError(w, r, err)
+    }
+    return
+  }
+
+  w.WriteHeader(http.StatusNoContent)
+}
+
+func (app *application) updatePostHandler (w http.ResponseWriter, r *http.Request) {
+  comment := getCommentFromCtx(r)
+
+  if err := writeJSON(w, http.StatusOK, comment); err != nil {
+    app.internalServerError(w, r, err)
+    return
+  }
+
+
+}
+
+func (app *application) commentsContextMiddleware(next http.Handler) http.Handler {
+  return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
   idParam := chi.URLParam(r, "commentID")
   id, err := strconv.ParseInt(idParam, 10, 64)
   if err != nil {
@@ -64,8 +108,12 @@ func (app *application) getCommentHandler(w http.ResponseWriter, r *http.Request
       }
     return
     }
-  if err := writeJSON(w, http.StatusOK, comment); err != nil {
-    app.internalServerError(w, r, err)
-    return
-  }
-}
+
+    ctx = context.WithValue(ctx, "comment", comment)
+    next.ServeHTTP(w, r.WithContext(ctx))
+ })
+
+ func getCommentFromCtx(r *http.Request) *store.Comment {
+   comment, _ := r.Context().Value("comment").(*store.Comment)
+   return comment
+ }
