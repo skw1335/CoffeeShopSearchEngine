@@ -20,7 +20,7 @@ val, ok := os.LookupEnv(key)
     return fallback
   }
   valAsInt, err := strconv.Atoi(val)
-  if err !- nil {
+  if err != nil {
     return fallback
   }
 

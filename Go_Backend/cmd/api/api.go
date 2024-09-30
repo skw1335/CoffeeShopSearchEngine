@@ -5,17 +5,30 @@ import (
   "net/http"
   "time"
   
+  "CoffeeMap/internal/store"
   "github.com/go-chi/chi"
   "github.com/go-chi/chi/middleware"
 )
 
 type application struct {
-  config config
+  config  config
+  store   store.Storage
+  db      dbConfig
 }
 
 type config struct {
-  addr string
+  addr     string
+  db       dbConfig
+  env      string
 }
+
+type dbConfig struct {
+  addr          string
+  maxOpenConns  int
+  maxIdleConns  int
+  maxIdleTime   string
+}
+
 func (app *application) mount() http.Handler {
   r := chi.NewRouter()
 
@@ -25,13 +38,22 @@ func (app *application) mount() http.Handler {
   r.Use(middleware.Recoverer)
 
 
-  r.Route("/v1", func (r chi.Router) {
+  r.Route("/v1", func(r chi.Router) {
     r.Get("/health", app.healthCheckHandler)
-})
-  // posts
-  
+
+  // comment
+    r.Route("/comments", func(r chi.Router) {
+      r.Post("/", app.createCommentHandler)
+    
+      r.Route("/{commentID}", func (r chi.Router) {
+        r.Get("/", app.getCommentHandler) 
+      })
+    })
   // users
-  
+   r.Route("/users", func (r chi.Router) {
+      r.Post("/", app.createUserHandler)
+   })
+}) 
   // auth
 
   return r
