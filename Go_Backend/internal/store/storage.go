@@ -16,12 +16,18 @@ type Storage struct {
     GetByID(context.Context, int64) (*Comment, error)
     Create(context.Context, *Comment) error
     Delete(context.Context, int64) error
+    Update(context.Context, *Comment) error
   }
   Users interface {
-    Create(context.Context, *User) error
+    GetByID(context.Context, int64) (*User, error)
+    Create(context.Context, *sql.Tx, *User) error
+    CreateAndInvite(ctx context.Context, user *User, token string, exp time.Duration) error
   }
   Ratings interface {
     Create(context.Context, *Rating) error
+  }
+  Shops interface {
+    GetByID(context.Context, int64) (*Shop, error)
   }
 }
 
@@ -31,4 +37,19 @@ func NewStorage(db *sql.DB) Storage {
     Users: &UsersStore{db},
     Ratings: &RatingsStore{db},
   }
+}
+
+
+func withTx(db *sql.DB, ctx context.Context, fn func(*sql.Tx) error) error {
+  tx, err := db.BeginTx(ctx, nil)
+  if err != nil {
+    return nil
+  }
+
+  if err := fn(tx); err != nil {
+    _ = tx.Rollback()
+    return err
+  }
+
+  return tx.Commit()
 }

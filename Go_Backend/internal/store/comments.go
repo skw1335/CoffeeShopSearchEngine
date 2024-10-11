@@ -15,6 +15,7 @@ type Comment struct {
   ShopID    int64     `json:"shop_id"`
   CreatedAt time.Time `json:"created_at"`
   UpdatedAt time.Time `json:"updated_at"`
+  Version   int       `json:"version"`
 }
 
 type CommentsStore struct {
@@ -48,10 +49,14 @@ func (s *CommentsStore) Create(ctx context.Context, comment *Comment) error {
 }
 
 func (s *CommentsStore) GetByID(ctx context.Context, id int64) (*Comment, error) {
-  query := `SELECT id, user_id, shop_id, content, title, created_at, updated_at
+  query := `SELECT id, user_id, shop_id, content, title, created_at, updated_at, version
              FROM comments
              WHERE id = $1
              `
+
+  ctx, cancel := context.WithTimeout(ctx, QueryTimeoutDuration)
+  defer cancel()
+
   var comment Comment
   err := s.db.QueryRowContext(ctx, query, id).Scan(
        &comment.ID,
@@ -61,6 +66,7 @@ func (s *CommentsStore) GetByID(ctx context.Context, id int64) (*Comment, error)
        &comment.Content,
        &comment.CreatedAt,
        &comment.UpdatedAt,
+       &comment.Version,
      )
   if err != nil {
       switch {
@@ -75,10 +81,13 @@ func (s *CommentsStore) GetByID(ctx context.Context, id int64) (*Comment, error)
    
 }
 
-func (s *commentsStore) (cxt context.Context, postID int64) error {
+func (s *CommentsStore) Delete(ctx context.Context, id int64) error {
   query := `DELETE FROM posts WHERE id = $1`
 
-  res, err := s.db.ExecContext(query, cxt, postID)
+  ctx, cancel := context.WithTimeout(ctx, QueryTimeoutDuration)
+  defer cancel()
+
+  res, err := s.db.ExecContext(ctx, query, id)
   if err != nil {
     return err
   }
@@ -94,3 +103,20 @@ func (s *commentsStore) (cxt context.Context, postID int64) error {
 
   return nil
 } 
+
+func (s *CommentsStore) Update(ctx context.Context, comment *Comment) error {
+  query := `UPDATE comments
+            SET title = $1, content = $2, version = version + 1
+            WHERE id = $3 AND version = $4
+            RETURNING version
+  `
+  ctx, cancel := context.WithTimeout(ctx, QueryTimeoutDuration)
+  defer cancel()
+
+  _, err := s.db.ExecContext(ctx, query, comment.Title, comment.Content, comment.ID, comment.Version)
+  if err != nil {
+    return err
+  }
+
+  return nil
+}

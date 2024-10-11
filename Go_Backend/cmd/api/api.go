@@ -6,8 +6,8 @@ import (
   "time"
   
   "CoffeeMap/internal/store"
-  "github.com/go-chi/chi"
-  "github.com/go-chi/chi/middleware"
+  "github.com/go-chi/chi/v5"
+  "github.com/go-chi/chi/v5/middleware"
 )
 
 type application struct {
@@ -20,6 +20,12 @@ type config struct {
   addr     string
   db       dbConfig
   env      string
+  apiURL   string
+  mail     mailConfig
+}
+
+type mailConfig struct {
+  exp time.Duration
 }
 
 type dbConfig struct {
@@ -44,20 +50,31 @@ func (app *application) mount() http.Handler {
   // comment
     r.Route("/comments", func(r chi.Router) {
       r.Post("/", app.createCommentHandler)
-    
       r.Route("/{commentID}", func (r chi.Router) {
         r.Use(app.commentsContextMiddleware)
 
         r.Get("/", app.getCommentHandler) 
         r.Delete("/", app.deleteCommentHandler)
-        r.Update("/", app.updateCommentHanlder)
+        r.Patch("/", app.updateCommentHandler)
       })
     })
   // users
-   r.Route("/users", func (r chi.Router) {
-      r.Post("/", app.createUserHandler)
-   })
-}) 
+   r.Route("/users", func(r chi.Router) {
+     r.Route("/{userID}", func(r chi.Router) {
+       r.Get("/", app.getUserHandler)
+     }) 
+   }) 
+   r.Route("/shops", func (r chi.Router) {
+     r.Route("/{shopID}", func (r chi.Router) {
+       r.Use(app.shopsContextMiddleware)
+       r.Get("/", app.getShopHandler) 
+     })
+  }) 
+  // public routes
+  r.Route("/authentication", func (r chi.Router) {
+    r.Post("/user", app.registerUserHandler)
+  })
+})
   // auth
 
   return r

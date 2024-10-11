@@ -13,6 +13,7 @@ type Rating struct {
   Ambiance  int    `json:"ambiance_rating"`
   Coffee    int  `json:"coffee_rating"`
   Overall   int    `json:"overall_rating"`
+  Version   int    `json:"version"`
   CreatedAt time.Time `json:"created_at"`
   UpdatedAt time.Time `json:"updated_at"`
 }
