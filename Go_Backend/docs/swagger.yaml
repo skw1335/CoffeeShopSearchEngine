@@ -1,0 +1,570 @@
+basePath: /v1
+definitions:
+  main.CreateCommentPayload:
+    properties:
+      content:
+        maxLength: 1000
+        type: string
+      title:
+        maxLength: 100
+        type: string
+    required:
+    - content
+    - title
+    type: object
+  main.CreateRatingPayload:
+    properties:
+      ambiance:
+        type: integer
+      coffee:
+        maximum: 10
+        type: integer
+      overall:
+        maximum: 10
+        type: integer
+    required:
+    - coffee
+    - overall
+    type: object
+  main.RegisterUserPayload:
+    description: Registers a user
+    properties:
+      email:
+        maxLength: 255
+        type: string
+      password:
+        maxLength: 72
+        minLength: 7
+        type: string
+      username:
+        maxLength: 100
+        type: string
+    required:
+    - email
+    - password
+    - username
+    type: object
+  main.UpdateCommentPayload:
+    properties:
+      content:
+        maxLength: 1000
+        type: string
+      title:
+        maxLength: 100
+        type: string
+    type: object
+  main.UpdateRatingPayload:
+    properties:
+      ambiance:
+        type: integer
+      coffee:
+        maximum: 10
+        type: integer
+      overall:
+        maximum: 10
+        type: integer
+    required:
+    - coffee
+    - overall
+    type: object
+  main.UserWithToken:
+    properties:
+      created_at:
+        type: string
+      email:
+        type: string
+      first_name:
+        type: string
+      id:
+        type: integer
+      is_active:
+        type: boolean
+      last_name:
+        type: string
+      token:
+        type: string
+      username:
+        type: string
+    type: object
+  store.Comment:
+    properties:
+      content:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: integer
+      shop_id:
+        type: integer
+      title:
+        type: string
+      updated_at:
+        type: string
+      user_id:
+        type: integer
+      version:
+        type: integer
+    type: object
+  store.Rating:
+    properties:
+      ambiance:
+        type: integer
+      coffee:
+        type: integer
+      created_at:
+        type: string
+      id:
+        type: integer
+      overall:
+        type: integer
+      shopID:
+        type: integer
+      updated_at:
+        type: string
+      user_id:
+        type: integer
+      version:
+        type: integer
+    type: object
+  store.Shop:
+    properties:
+      address:
+        type: string
+      id:
+        type: integer
+      latitude:
+        type: number
+      longitude:
+        type: number
+      rating:
+        type: number
+      review:
+        type: string
+      shop_name:
+        type: string
+    type: object
+  store.User:
+    properties:
+      created_at:
+        type: string
+      email:
+        type: string
+      first_name:
+        type: string
+      id:
+        type: integer
+      is_active:
+        type: boolean
+      last_name:
+        type: string
+      username:
+        type: string
+    type: object
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: API for CoffeeMap, an interactive map for coffee shops written in Golang
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: CoffeeMap API written in Golang
+paths:
+  /authentication/user:
+    post:
+      consumes:
+      - application/json
+      description: Registers a user
+      parameters:
+      - description: User credentials
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/main.RegisterUserPayload'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: User registered
+          schema:
+            $ref: '#/definitions/main.UserWithToken'
+        "400":
+          description: Bad Request
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: Registers a user
+      tags:
+      - authentication
+  /comments:
+    post:
+      consumes:
+      - application/json
+      description: Creates a comment
+      parameters:
+      - description: Comment payload
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/main.CreateCommentPayload'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/store.Comment'
+        "400":
+          description: Bad Request
+          schema: {}
+        "401":
+          description: Unauthorized
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      security:
+      - ApiKeyAuth: []
+      summary: Creates a comment
+      tags:
+      - comments
+  /comments/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a Comment by ID
+      parameters:
+      - description: Comment ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: No Content
+          schema:
+            type: string
+        "404":
+          description: Not Found
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      security:
+      - ApiKeyAuth: []
+      summary: Deletes a Comment
+      tags:
+      - comments
+    get:
+      consumes:
+      - application/json
+      description: Fetches a comment by ID
+      parameters:
+      - description: Comment ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/store.Comment'
+        "404":
+          description: Not Found
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      security:
+      - ApiKeyAuth: []
+      summary: Fetches a comment
+      tags:
+      - comments
+    patch:
+      consumes:
+      - application/json
+      description: Updates a Comment by ID
+      parameters:
+      - description: Comment ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Comment payload
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/main.UpdateCommentPayload'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/store.Comment'
+        "400":
+          description: Bad Request
+          schema: {}
+        "401":
+          description: Unauthorized
+          schema: {}
+        "404":
+          description: Not Found
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      security:
+      - ApiKeyAuth: []
+      summary: Updates a Comment
+      tags:
+      - comments
+  /health:
+    get:
+      description: Healthcheck endpoint
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+      summary: Healthcheck
+      tags:
+      - ops
+  /rating/{id}:
+    patch:
+      consumes:
+      - application/json
+      description: Updates a Rating by ID
+      parameters:
+      - description: Rating ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Rating payload
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/main.UpdateRatingPayload'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/store.Rating'
+        "400":
+          description: Bad Request
+          schema: {}
+        "401":
+          description: Unauthorized
+          schema: {}
+        "404":
+          description: Not Found
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      security:
+      - ApiKeyAuth: []
+      summary: Updates a Rating
+      tags:
+      - ratings
+  /ratings:
+    post:
+      consumes:
+      - application/json
+      description: Creates a rating
+      parameters:
+      - description: Rating payload
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/main.CreateRatingPayload'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/store.Rating'
+        "400":
+          description: Bad Request
+          schema: {}
+        "401":
+          description: Unauthorized
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      security:
+      - ApiKeyAuth: []
+      summary: Creates a rating
+      tags:
+      - rating
+  /ratings/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a Rating by ID
+      parameters:
+      - description: Rating ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: No Content
+          schema:
+            type: string
+        "404":
+          description: Not Found
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      security:
+      - ApiKeyAuth: []
+      summary: Deletes a Rating
+      tags:
+      - ratings
+    get:
+      consumes:
+      - application/json
+      description: Fetches a rating by ID
+      parameters:
+      - description: Rating ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/store.Rating'
+        "404":
+          description: Not Found
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      security:
+      - ApiKeyAuth: []
+      summary: Fetches a rating
+      tags:
+      - ratings
+  /shops/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Fetches a shop by ID
+      parameters:
+      - description: Shop ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/store.Shop'
+        "404":
+          description: Not Found
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      security:
+      - ApiKeyAuth: []
+      summary: Fetches a shop
+      tags:
+      - '> shop'
+  /users/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Fetches a user profile by ID
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/store.User'
+        "400":
+          description: Bad Request
+          schema: {}
+        "404":
+          description: Not Found
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      security:
+      - ApiKeyAuth: []
+      summary: Fetches a user profile
+      tags:
+      - users
+  /users/activate/{token}:
+    put:
+      description: Activates/Register a user by invitation token
+      parameters:
+      - description: Invitation token
+        in: path
+        name: token
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: User activated
+          schema:
+            type: string
+        "404":
+          description: Not Found
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      security:
+      - ApiKeyAuth: []
+      summary: Activates/Register a user
+      tags:
+      - users
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

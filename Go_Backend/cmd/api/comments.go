@@ -16,7 +16,20 @@ type CreateCommentPayload struct {
   Title   string  `json:"title" validate:"required,max=100"`
   Content string  `json:"content" validate:"required,max=1000"`
 }
-
+// CreateComment godoc
+//
+//	@Summary		Creates a comment 
+//	@Description	Creates a comment 
+//	@Tags			comments
+//	@Accept			json
+//	@Produce		json
+//	@Param			payload	body		CreateCommentPayload	true	"Comment payload"
+//	@Success		201		{object}	store.Comment
+//	@Failure		400		{object}	error
+//	@Failure		401		{object}	error
+//	@Failure		500		{object}	error
+//	@Security		ApiKeyAuth
+//	@Router			/comments [POST]
 func (app *application) createCommentHandler(w http.ResponseWriter, r *http.Request) {
   var payload CreateCommentPayload 
   if err := readJSON(w, r, &payload); err != nil {
@@ -47,7 +60,19 @@ func (app *application) createCommentHandler(w http.ResponseWriter, r *http.Requ
   }
 }
 
-
+// GetComment godoc
+//
+//	@Summary		Fetches a comment 
+//	@Description	Fetches a comment by ID
+//	@Tags			comments
+//	@Accept			json
+//	@Produce		json
+//	@Param			id	path		int	true	"Comment ID"
+//	@Success		200	{object}	store.Comment
+//	@Failure		404	{object}	error
+//	@Failure		500	{object}	error
+//	@Security		ApiKeyAuth
+//	@Router			/comments/{id} [GET]
 func (app *application) getCommentHandler(w http.ResponseWriter, r *http.Request) {
   comment := getCommentFromCtx(r)
 
@@ -57,6 +82,19 @@ func (app *application) getCommentHandler(w http.ResponseWriter, r *http.Request
   }
 }
 
+// DeleteComment godoc
+//
+//	@Summary		Deletes a Comment 
+//	@Description	Delete a Comment by ID
+//	@Tags			comments
+//	@Accept			json
+//	@Produce		json
+//	@Param			id	path		int	true	"Comment ID"
+//	@Success		204	{object}	string
+//	@Failure		404	{object}	error
+//	@Failure		500	{object}	error
+//	@Security		ApiKeyAuth
+//	@Router			/comments/{id} [DELETE]
 func (app *application) deleteCommentHandler(w http.ResponseWriter, r *http.Request) {
   idParam := chi.URLParam(r, "commentID")
 
@@ -86,6 +124,22 @@ type UpdateCommentPayload struct {
   Content   *string    `json:"content" validate:"omitempty,max=1000"`
 }
 
+// UpdateComment godoc
+//
+//	@Summary		Updates a Comment 
+//	@Description	Updates a Comment by ID
+//	@Tags			comments
+//	@Accept			json
+//	@Produce		json
+//	@Param			id		path		int						true	"Comment ID"
+//	@Param			payload	body		UpdateCommentPayload	true	"Comment payload"
+//	@Success		200		{object}	store.Comment
+//	@Failure		400		{object}	error
+//	@Failure		401		{object}	error
+//	@Failure		404		{object}	error
+//	@Failure		500		{object}	error
+//	@Security		ApiKeyAuth
+//	@Router			/comments/{id} [patch]
 func (app *application) updateCommentHandler (w http.ResponseWriter, r *http.Request) {
   comment := getCommentFromCtx(r)
 

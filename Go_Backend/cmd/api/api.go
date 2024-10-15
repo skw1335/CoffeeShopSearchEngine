@@ -4,16 +4,20 @@ import (
   "log"
   "net/http"
   "time"
-  
+  "fmt" 
   "CoffeeMap/internal/store"
+  "CoffeeMap/docs"
   "github.com/go-chi/chi/v5"
   "github.com/go-chi/chi/v5/middleware"
+
+  httpSwagger "github.com/swaggo/http-swagger/v2"
 )
 
 type application struct {
   config  config
   store   store.Storage
   db      dbConfig
+  mailer  mailer.Client
 }
 
 type config struct {
@@ -46,7 +50,9 @@ func (app *application) mount() http.Handler {
 
   r.Route("/v1", func(r chi.Router) {
     r.Get("/health", app.healthCheckHandler)
-
+   
+    docsURL := fmt.Sprintf("%s/swagger/doc.json", app.config.addr)
+    r.Get("/swagger/*", httpSwagger.Handler(httpSwagger.URL(docsURL)))
   // comment
     r.Route("/comments", func(r chi.Router) {
       r.Post("/", app.createCommentHandler)
@@ -58,8 +64,20 @@ func (app *application) mount() http.Handler {
         r.Patch("/", app.updateCommentHandler)
       })
     })
-  // users
+  // ratings 
+    r.Route("/ratings", func(r chi.Router) {
+      r.Post("/", app.createRatingHandler)
+      r.Route("/{ratingID}", func (r chi.Router) {
+        r.Use(app.ratingsContextMiddleware)
+
+        r.Get("/", app.getRatingHandler) 
+        r.Delete("/", app.deleteRatingHandler)
+        r.Patch("/", app.updateRatingHandler)
+      })
+    })
+  //users
    r.Route("/users", func(r chi.Router) {
+     r.Put("/activate/{token}", app.activateUserHandler)
      r.Route("/{userID}", func(r chi.Router) {
        r.Get("/", app.getUserHandler)
      }) 
@@ -81,6 +99,10 @@ func (app *application) mount() http.Handler {
 }
 
 func (app *application) run(mux http.Handler) error {
+  // Docs
+  docs.SwaggerInfo.Version = version
+  docs.SwaggerInfo.Host = app.config.apiURL
+  docs.SwaggerInfo.BasePath = "/v1"
 
   srv := &http.Server{
     Addr: app.config.addr,

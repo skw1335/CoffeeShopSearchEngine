@@ -5,6 +5,8 @@ import (
   "context"
   "time"
   "errors"
+  "encoding/hex"
+  "crypto/sha256"
   
   "golang.org/x/crypto/bcrypt"
 )
@@ -19,8 +21,9 @@ type User struct {
   FirstName string    `json:"first_name"`
   LastName  string    `json:"last_name"`
   Email     string    `json:"email"`
-  Password  password    `json:"-"`
+  Password  password  `json:"-"`
   CreatedAt time.Time `json:"created_at"`
+  IsActive  bool      `json:"is_active"`
 }
 type UsersStore struct {
   db *sql.DB
@@ -79,7 +82,7 @@ func (s *UsersStore) Create(ctx context.Context, tx *sql.Tx, user *User) error {
 }
 
 func (s *UsersStore) GetByID(ctx context.Context, id int64)  (*User, error) {
-  query := `SELECT id, username, email, password, created_at
+  query := `SELECT id, user_id, shop_id, , created_at
             FROM users
             WHERE id = $1
   `  
@@ -139,4 +142,87 @@ func (s *UsersStore) createUserInvitation(ctx context.Context, tx *sql.Tx, token
   }
 
   return nil
+}
+func (s *UsersStore) getUserByInvitation(ctx context.Context, tx *sql.Tx, token string) (*User, error) {
+  query := `
+    SELECT u.id, u.username, u.email, u.created_at, u.is_active
+    FROM users u
+    JOIN user_invitations ui ON u.id = ui.user_id
+    WHERE ui.token = $1 AND ui.expiry > $2
+  `
+  hash := sha256.Sum256([]byte(token))
+  hashToken := hex.EncodeToString(hash[:])
+
+  ctx, cancel := context.WithTimeout(ctx, QueryTimeoutDuration)
+  defer cancel()
+
+  user := &User{}
+  err := tx.QueryRowContext(ctx, query, hashToken, time.Now()).Scan(
+    &user.ID,
+    &user.Username,
+    &user.Email,
+    &user.CreatedAt,
+    &user.IsActive,
+  )
+  if err != nil {
+    switch err{
+      case sql.ErrNoRows:
+        return nil, ErrNotFound
+      default: 
+        return nil, err
+    }
+  }
+
+  return user, nil
+}
+func (s *UsersStore) Activate(ctx context.Context, token string) error {
+  // 1. find the user that the token belongs to
+  // 2. update the user 
+  // 3. clean the invitations
+  return withTx(s.db, ctx, func(tx *sql.Tx) error {
+  user, err := s.getUserByInvitation(ctx, tx, token)
+  if err != nil {
+    return err
+  }
+
+  user.IsActive = true
+  if err := s.update(ctx, tx, user); err != nil {
+    return err
+  }
+
+  if err := s.deleteUserInvitations(ctx, tx, user.ID); err != nil {
+    return err
+    }
+  return nil
+  })
+}
+
+func (s *UsersStore) update(ctx context.Context, tx *sql.Tx, user *User) error {
+  query := `UPDATE users SET username = $1,
+            email = $2, is_active = $3
+            WHERE id = $4
+  `
+  ctx, cancel := context.WithTimeout(ctx, QueryTimeoutDuration)
+  defer cancel()
+
+  _, err := tx.ExecContext(ctx, query, user.Username, user.Email, user.IsActive, user.ID)
+  if err != nil {
+    return err
+  }
+  return nil
+}
+
+func (s *UsersStore) deleteUserInvitations(ctx context.Context, tx *sql.Tx, UserID int64) error {
+  query := `DELETE FROM user_invitations WHERE user_id = $1`
+
+  ctx, cancel := context.WithTimeout(ctx, QueryTimeoutDuration)
+  defer cancel()
+
+  _, err := tx.ExecContext(ctx, query, UserID)
+  if err != nil {
+    return err
+  }
+
+  return nil
+
 }

@@ -42,6 +42,19 @@ func (app *application) shopsContextMiddleware(next http.Handler) http.Handler {
 
 }
 
+// GetShop godoc
+//
+//	@Summary		Fetches a shop
+//	@Description	Fetches a shop by ID
+//	@Tags			> shop
+//	@Accept			json
+//	@Produce		json
+//	@Param			id	path		int	true	"Shop ID"
+//	@Success		200	{object}	store.Shop
+//	@Failure		404	{object}	error
+//	@Failure		500	{object}	error
+//	@Security		ApiKeyAuth
+//	@Router			/shops/{id} [get]
 func (app *application) getShopHandler(w http.ResponseWriter, r *http.Request) {
   shop := getShopFromCtx(r)
 

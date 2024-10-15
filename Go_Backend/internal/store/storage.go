@@ -22,9 +22,13 @@ type Storage struct {
     GetByID(context.Context, int64) (*User, error)
     Create(context.Context, *sql.Tx, *User) error
     CreateAndInvite(ctx context.Context, user *User, token string, exp time.Duration) error
+    Activate(context.Context, string) error
   }
   Ratings interface {
+    GetByID(context.Context, int64) (*Rating, error)
     Create(context.Context, *Rating) error
+    Delete(context.Context, int64) error
+    Update(context.Context, *Rating) error
   }
   Shops interface {
     GetByID(context.Context, int64) (*Shop, error)
