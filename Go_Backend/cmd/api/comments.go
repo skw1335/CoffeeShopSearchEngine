@@ -29,7 +29,7 @@ type CreateCommentPayload struct {
 //	@Failure		401		{object}	error
 //	@Failure		500		{object}	error
 //	@Security		ApiKeyAuth
-//	@Router			/comments [POST]
+//	@Router			/posts/comments [POST]
 func (app *application) createCommentHandler(w http.ResponseWriter, r *http.Request) {
   var payload CreateCommentPayload 
   if err := readJSON(w, r, &payload); err != nil {
@@ -72,9 +72,9 @@ func (app *application) createCommentHandler(w http.ResponseWriter, r *http.Requ
 //	@Failure		404	{object}	error
 //	@Failure		500	{object}	error
 //	@Security		ApiKeyAuth
-//	@Router			/comments/{id} [GET]
+//	@Router			/posts/comments/{id} [GET]
 func (app *application) getCommentHandler(w http.ResponseWriter, r *http.Request) {
-  comment := getCommentFromCtx(r)
+  comment := getCommentFromContext(r)
 
   if err := app.jsonResponse(w, http.StatusOK, comment); err != nil {
     app.internalServerError(w, r, err)
@@ -94,7 +94,7 @@ func (app *application) getCommentHandler(w http.ResponseWriter, r *http.Request
 //	@Failure		404	{object}	error
 //	@Failure		500	{object}	error
 //	@Security		ApiKeyAuth
-//	@Router			/comments/{id} [DELETE]
+//	@Router			/posts/comments/{id} [DELETE]
 func (app *application) deleteCommentHandler(w http.ResponseWriter, r *http.Request) {
   idParam := chi.URLParam(r, "commentID")
 
@@ -139,9 +139,9 @@ type UpdateCommentPayload struct {
 //	@Failure		404		{object}	error
 //	@Failure		500		{object}	error
 //	@Security		ApiKeyAuth
-//	@Router			/comments/{id} [patch]
+//	@Router			/posts/comments/{id} [patch]
 func (app *application) updateCommentHandler (w http.ResponseWriter, r *http.Request) {
-  comment := getCommentFromCtx(r)
+  comment := getCommentFromContext(r)
 
   var payload UpdateCommentPayload
   if err := readJSON(w, r, &payload); err != nil {
@@ -207,7 +207,7 @@ func (app *application) commentsContextMiddleware(next http.Handler) http.Handle
 
 }
 
-func getCommentFromCtx(r *http.Request) *store.Comment {
+func getCommentFromContext(r *http.Request) *store.Comment {
    comment, _ := r.Context().Value(commentCtx).(*store.Comment)
    return comment
  }

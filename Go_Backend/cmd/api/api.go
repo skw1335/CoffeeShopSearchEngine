@@ -6,6 +6,8 @@ import (
   "time"
   "fmt" 
   "CoffeeMap/internal/store"
+  "CoffeeMap/internal/mailer"
+	"CoffeeMap/internal/auth"
   "CoffeeMap/docs"
   "github.com/go-chi/chi/v5"
   "github.com/go-chi/chi/v5/middleware"
@@ -14,22 +16,41 @@ import (
 )
 
 type application struct {
-  config  config
-  store   store.Storage
-  db      dbConfig
-  mailer  mailer.Client
+  config  			config
+  store   			store.Storage
+  db      			dbConfig
+  mailer  			mailer.Client
+	authenticator	auth.Authenticator
 }
 
 type config struct {
-  addr     string
-  db       dbConfig
-  env      string
-  apiURL   string
-  mail     mailConfig
+  addr        string
+  db          dbConfig
+  dbPassword  string
+  env         string
+  apiURL      string
+  frontendURL string
+  mail        mailConfig
+	auth				authConfig
 }
 
+type authConfig struct {
+	token tokenConfig
+}
+
+type tokenConfig struct {
+	secret  string
+	exp 		time.Duration
+	iss			string
+}
 type mailConfig struct {
   exp time.Duration
+  fromEmail string
+  sendGrid sendGridConfig
+}
+
+type sendGridConfig struct {
+  apiKey string
 }
 
 type dbConfig struct {
@@ -54,20 +75,25 @@ func (app *application) mount() http.Handler {
     docsURL := fmt.Sprintf("%s/swagger/doc.json", app.config.addr)
     r.Get("/swagger/*", httpSwagger.Handler(httpSwagger.URL(docsURL)))
   // comment
-    r.Route("/comments", func(r chi.Router) {
+	r.Route("/posts", func (r chi.Router) {
+		r.Use(app.AuthTokenMiddleware)
+    
+		r.Route("/comments", func(r chi.Router) {
       r.Post("/", app.createCommentHandler)
-      r.Route("/{commentID}", func (r chi.Router) {
+      
+			r.Route("/{commentID}", func (r chi.Router) {
         r.Use(app.commentsContextMiddleware)
 
         r.Get("/", app.getCommentHandler) 
-        r.Delete("/", app.deleteCommentHandler)
-        r.Patch("/", app.updateCommentHandler)
+        r.Delete("/", app.checkPostOwnership("admin", app.deleteCommentHandler))
+        r.Patch("/", app.checkPostOwnership("moderator", app.updateCommentHandler))
       })
     })
   // ratings 
     r.Route("/ratings", func(r chi.Router) {
       r.Post("/", app.createRatingHandler)
-      r.Route("/{ratingID}", func (r chi.Router) {
+      
+			r.Route("/{ratingID}", func (r chi.Router) {
         r.Use(app.ratingsContextMiddleware)
 
         r.Get("/", app.getRatingHandler) 
@@ -75,10 +101,14 @@ func (app *application) mount() http.Handler {
         r.Patch("/", app.updateRatingHandler)
       })
     })
+	})
   //users
    r.Route("/users", func(r chi.Router) {
      r.Put("/activate/{token}", app.activateUserHandler)
+
+		 
      r.Route("/{userID}", func(r chi.Router) {
+			 r.Use(app.AuthTokenMiddleware)
        r.Get("/", app.getUserHandler)
      }) 
    }) 
@@ -91,6 +121,7 @@ func (app *application) mount() http.Handler {
   // public routes
   r.Route("/authentication", func (r chi.Router) {
     r.Post("/user", app.registerUserHandler)
+		r.Post("/token", app.createTokenHandler)
   })
 })
   // auth

@@ -20,9 +20,11 @@ type Storage struct {
   }
   Users interface {
     GetByID(context.Context, int64) (*User, error)
+		GetByEmail(context.Context, string) (*User, error)
     Create(context.Context, *sql.Tx, *User) error
     CreateAndInvite(ctx context.Context, user *User, token string, exp time.Duration) error
     Activate(context.Context, string) error
+    Delete(context.Context, int64) error
   }
   Ratings interface {
     GetByID(context.Context, int64) (*Rating, error)
@@ -33,6 +35,9 @@ type Storage struct {
   Shops interface {
     GetByID(context.Context, int64) (*Shop, error)
   }
+	Roles interface {
+		GetByName(context.Context, string) (*Role, error)
+	}
 }
 
 func NewStorage(db *sql.DB) Storage {
@@ -40,6 +45,7 @@ func NewStorage(db *sql.DB) Storage {
     Comments: &CommentsStore{db},
     Users: &UsersStore{db},
     Ratings: &RatingsStore{db},
+		Roles: &RolesStore{db},
   }
 }
 

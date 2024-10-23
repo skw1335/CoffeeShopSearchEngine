@@ -30,7 +30,7 @@ type CreateRatingPayload struct {
 //	@Failure		401		{object}	error
 //	@Failure		500		{object}	error
 //	@Security		ApiKeyAuth
-//	@Router			/ratings [POST]
+//	@Router			/posts/ratings [POST]
 func (app *application) createRatingHandler(w http.ResponseWriter, r *http.Request) {
   var payload CreateRatingPayload 
   if err := readJSON(w, r, &payload); err != nil {
@@ -74,7 +74,7 @@ func (app *application) createRatingHandler(w http.ResponseWriter, r *http.Reque
 //	@Failure		404	{object}	error
 //	@Failure		500	{object}	error
 //	@Security		ApiKeyAuth
-//	@Router			/ratings/{id} [get]
+//	@Router			/posts/ratings/{id} [get]
 func (app *application) getRatingHandler(w http.ResponseWriter, r *http.Request) {
   rating := getRatingFromCtx(r)
 
@@ -96,7 +96,7 @@ func (app *application) getRatingHandler(w http.ResponseWriter, r *http.Request)
 //	@Failure		404	{object}	error
 //	@Failure		500	{object}	error
 //	@Security		ApiKeyAuth
-//	@Router			/ratings/{id} [delete]
+//	@Router			/posts/ratings/{id} [delete]
 func (app *application) deleteRatingHandler(w http.ResponseWriter, r *http.Request) {
   idParam := chi.URLParam(r, "ratingID")
 
@@ -142,7 +142,7 @@ type UpdateRatingPayload struct {
 //	@Failure		404		{object}	error
 //	@Failure		500		{object}	error
 //	@Security		ApiKeyAuth
-//	@Router			/rating/{id} [patch]
+//	@Router			/posts/rating/{id} [patch]
 func (app *application) updateRatingHandler (w http.ResponseWriter, r *http.Request) {
   rating := getRatingFromCtx(r)
 

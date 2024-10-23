@@ -16,6 +16,52 @@
     },
     "basePath": "/v1",
     "paths": {
+        "/authentication/token": {
+            "post": {
+                "description": "Creates a token for a user",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "authentication"
+                ],
+                "summary": "Creates a token",
+                "parameters": [
+                    {
+                        "description": "User credentials",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/main.CreateUserTokenPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {}
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {}
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {}
+                    }
+                }
+            }
+        },
         "/authentication/user": {
             "post": {
                 "description": "Registers a user",
@@ -58,7 +104,27 @@
                 }
             }
         },
-        "/comments": {
+        "/health": {
+            "get": {
+                "description": "Healthcheck endpoint",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "ops"
+                ],
+                "summary": "Healthcheck",
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/posts/comments": {
             "post": {
                 "security": [
                     {
@@ -109,7 +175,7 @@
                 }
             }
         },
-        "/comments/{id}": {
+        "/posts/comments/{id}": {
             "get": {
                 "security": [
                     {
@@ -257,27 +323,7 @@
                 }
             }
         },
-        "/health": {
-            "get": {
-                "description": "Healthcheck endpoint",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "ops"
-                ],
-                "summary": "Healthcheck",
-                "responses": {
-                    "200": {
-                        "description": "ok",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "/rating/{id}": {
+        "/posts/rating/{id}": {
             "patch": {
                 "security": [
                     {
@@ -339,7 +385,7 @@
                 }
             }
         },
-        "/ratings": {
+        "/posts/ratings": {
             "post": {
                 "security": [
                     {
@@ -390,7 +436,7 @@
                 }
             }
         },
-        "/ratings/{id}": {
+        "/posts/ratings/{id}": {
             "get": {
                 "security": [
                     {
@@ -653,6 +699,22 @@
                 }
             }
         },
+        "main.CreateUserTokenPayload": {
+            "type": "object",
+            "required": [
+                "password"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 7
+                }
+            }
+        },
         "main.RegisterUserPayload": {
             "description": "Registers a user",
             "type": "object",
@@ -731,6 +793,12 @@
                 "last_name": {
                     "type": "string"
                 },
+                "role": {
+                    "$ref": "#/definitions/store.Role"
+                },
+                "role_id": {
+                    "type": "integer"
+                },
                 "token": {
                     "type": "string"
                 },
@@ -800,6 +868,23 @@
                 }
             }
         },
+        "store.Role": {
+            "type": "object",
+            "properties": {
+                "Level": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
         "store.Shop": {
             "type": "object",
             "properties": {
@@ -846,6 +931,12 @@
                 },
                 "last_name": {
                     "type": "string"
+                },
+                "role": {
+                    "$ref": "#/definitions/store.Role"
+                },
+                "role_id": {
+                    "type": "integer"
                 },
                 "username": {
                     "type": "string"

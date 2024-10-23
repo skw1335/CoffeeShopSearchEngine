@@ -26,6 +26,17 @@ definitions:
     - coffee
     - overall
     type: object
+  main.CreateUserTokenPayload:
+    properties:
+      email:
+        type: string
+      password:
+        maxLength: 255
+        minLength: 7
+        type: string
+    required:
+    - password
+    type: object
   main.RegisterUserPayload:
     description: Registers a user
     properties:
@@ -81,6 +92,10 @@ definitions:
         type: boolean
       last_name:
         type: string
+      role:
+        $ref: '#/definitions/store.Role'
+      role_id:
+        type: integer
       token:
         type: string
       username:
@@ -126,6 +141,17 @@ definitions:
       version:
         type: integer
     type: object
+  store.Role:
+    properties:
+      Level:
+        type: integer
+      description:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+    type: object
   store.Shop:
     properties:
       address:
@@ -157,6 +183,10 @@ definitions:
         type: boolean
       last_name:
         type: string
+      role:
+        $ref: '#/definitions/store.Role'
+      role_id:
+        type: integer
       username:
         type: string
     type: object
@@ -172,6 +202,37 @@ info:
   termsOfService: http://swagger.io/terms/
   title: CoffeeMap API written in Golang
 paths:
+  /authentication/token:
+    post:
+      consumes:
+      - application/json
+      description: Creates a token for a user
+      parameters:
+      - description: User credentials
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/main.CreateUserTokenPayload'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Token
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema: {}
+        "401":
+          description: Unauthorized
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: Creates a token
+      tags:
+      - authentication
   /authentication/user:
     post:
       consumes:
@@ -200,7 +261,20 @@ paths:
       summary: Registers a user
       tags:
       - authentication
-  /comments:
+  /health:
+    get:
+      description: Healthcheck endpoint
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+      summary: Healthcheck
+      tags:
+      - ops
+  /posts/comments:
     post:
       consumes:
       - application/json
@@ -233,7 +307,7 @@ paths:
       summary: Creates a comment
       tags:
       - comments
-  /comments/{id}:
+  /posts/comments/{id}:
     delete:
       consumes:
       - application/json
@@ -330,20 +404,7 @@ paths:
       summary: Updates a Comment
       tags:
       - comments
-  /health:
-    get:
-      description: Healthcheck endpoint
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: ok
-          schema:
-            type: string
-      summary: Healthcheck
-      tags:
-      - ops
-  /rating/{id}:
+  /posts/rating/{id}:
     patch:
       consumes:
       - application/json
@@ -384,7 +445,7 @@ paths:
       summary: Updates a Rating
       tags:
       - ratings
-  /ratings:
+  /posts/ratings:
     post:
       consumes:
       - application/json
@@ -417,7 +478,7 @@ paths:
       summary: Creates a rating
       tags:
       - rating
-  /ratings/{id}:
+  /posts/ratings/{id}:
     delete:
       consumes:
       - application/json
