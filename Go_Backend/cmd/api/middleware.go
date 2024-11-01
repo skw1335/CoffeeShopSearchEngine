@@ -52,7 +52,7 @@ func (app *application) AuthTokenMiddleware(next http.Handler) http.Handler {
 	})
 }
 
-func (app *application) checkPostOwnership(requiredRole string, next http.Handler) http.HandlerFunc {
+func (app *application) checkPostOwnership(requiredRole string, next http.HandlerFunc) http.HandlerFunc {
 	return http.HandlerFunc(func (w http.ResponseWriter, r *http.Request) {
 		user := getUserFromContext(r)
 		post := getCommentFromContext(r)

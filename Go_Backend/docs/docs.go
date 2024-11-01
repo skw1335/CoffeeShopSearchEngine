@@ -724,7 +724,6 @@ const docTemplate = `{
             }
         },
         "main.RegisterUserPayload": {
-            "description": "Registers a user",
             "type": "object",
             "required": [
                 "email",

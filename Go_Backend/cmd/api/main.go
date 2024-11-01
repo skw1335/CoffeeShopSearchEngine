@@ -90,7 +90,7 @@ func main() {
       config: cfg,
       store: store, 
       mailer: mailer,
-			authenticator: jwtAuthenticator,
+      authenticator: jwtAuthenticator,
   }
  
   mux := app.mount()
