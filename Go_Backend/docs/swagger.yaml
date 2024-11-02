@@ -38,7 +38,6 @@ definitions:
     - password
     type: object
   main.RegisterUserPayload:
-    description: Registers a user
     properties:
       email:
         maxLength: 255

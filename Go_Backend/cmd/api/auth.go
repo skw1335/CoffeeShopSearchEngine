@@ -6,25 +6,15 @@ import (
   "net/http"
   "encoding/hex"
   "crypto/sha256"
-	"time"
+  "time"
 	
-	"github.com/golang-jwt/jwt/v5"
-	"github.com/google/uuid"
+   "github.com/golang-jwt/jwt/v5"
+   "github.com/google/uuid"
   "CoffeeMap/internal/store"
   "CoffeeMap/internal/mailer"
+
 )
-// registerUserHandler godoc
-//
-//	@Summary		Registers a user
-//	@Description	Registers a user
-//	@Tags			authentication
-//	@Accept			json
-//	@Produce		json
-//	@Param			payload	body		RegisterUserPayload	true	"User credentials"
-//	@Success		201		{object}	store.User			"User registered"
-//	@Failure		400		{object}	error
-//	@Failure		500		{object}	error
-//	@Router			/authentication/user [post]
+
 type RegisterUserPayload struct {
   Username string `json:"username" validate:"required,max=100"`
   Email    string `json:"email" validate:"required,email,max=255"`
@@ -35,6 +25,8 @@ type UserWithToken struct {
   *store.User
   Token string `json:"token"`
 }
+
+
 // registerUserHandler godoc
 //
 //	@Summary		Registers a user
@@ -62,6 +54,9 @@ func (app *application) registerUserHandler(w http.ResponseWriter, r *http.Reque
   user := &store.User{
     Username: payload.Username,
     Email: payload.Email,
+    Role : store.Role{
+	name: "user",
+	},
   }
 
   if err := user.Password.Set(payload.Password); err != nil {
