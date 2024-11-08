@@ -121,15 +121,15 @@ definitions:
     type: object
   store.Rating:
     properties:
-      ambiance:
+      ambiance_rating:
         type: integer
-      coffee:
+      coffee_rating:
         type: integer
       created_at:
         type: string
       id:
         type: integer
-      overall:
+      overall_rating:
         type: integer
       shopID:
         type: integer

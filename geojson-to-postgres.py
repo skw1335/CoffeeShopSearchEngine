@@ -37,7 +37,7 @@ with open('data_harvest/deduped_data.json') as file:
 db_password = getpass.getpass("Enter database password: ")
 
 # Connect to the database
-connection = create_connection("localhost", "postgres", db_password, "coffeeMap")
+connection = create_connection("localhost", "sam_dev", db_password, "coffeeMap")
 if connection is None:
     print("Failed to connect to the database. Exiting.")
     sys.exit(1)

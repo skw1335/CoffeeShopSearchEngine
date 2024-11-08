@@ -20,7 +20,7 @@ type application struct {
   store   			store.Storage
   db      			dbConfig
   mailer  			mailer.Client
-	authenticator	auth.Authenticator
+  authenticator	auth.Authenticator
 }
 
 type config struct {
@@ -31,7 +31,7 @@ type config struct {
   apiURL      string
   frontendURL string
   mail        mailConfig
-	auth				authConfig
+  auth	      authConfig
 }
 
 type authConfig struct {

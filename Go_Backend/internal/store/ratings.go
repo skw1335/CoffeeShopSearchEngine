@@ -10,9 +10,9 @@ type Rating struct {
   ID        int64     `json:"id"`
   UserID    int64     `json:"user_id"`
   ShopID    int64     `json:"shop_id`
-  Ambiance  int       `json:"ambiance"`
-  Coffee    int       `json:"coffee"`
-  Overall   int       `json:"overall"`
+  Ambiance  int       `json:"ambiance_rating"`
+  Coffee    int       `json:"coffee_rating"`
+  Overall   int       `json:"overall_rating"`
   Version   int       `json:"version"`
   CreatedAt time.Time `json:"created_at"`
   UpdatedAt time.Time `json:"updated_at"`
@@ -23,7 +23,7 @@ type RatingsStore struct {
 }
 
 func (s *RatingsStore) Create(ctx context.Context, rating *Rating) error {
-  query := `INSERT INTO ratings (coffee, ambiance, overall, user_id, shop_id)
+  query := `INSERT INTO ratings (coffee_rating, ambiance_rating, overall_rating, user_id, shop_id)
             VALUES ($1, $2, $3, $4, $5) RETURNING id, created_at
   `
   err := s.db.QueryRowContext(
@@ -45,7 +45,7 @@ func (s *RatingsStore) Create(ctx context.Context, rating *Rating) error {
   return nil
 }
 func (s *RatingsStore) GetByID(ctx context.Context, id int64)  (*Rating, error) {
-  query := `SELECT id, rating_id, shop_id, coffee, ambiance, overall, created_at
+  query := `SELECT id, rating_id, shop_id, coffee_rating, ambiance_rating, overall_Rating, created_at
             FROM ratings 
             WHERE id = $1
   `  
@@ -97,7 +97,7 @@ func (s *RatingsStore) Delete(ctx context.Context, id int64) error {
 
 func (s *RatingsStore) Update(ctx context.Context, rating *Rating) error {
   query := `UPDATE ratings
-            SET coffee = $1, ambiance = $2, overall = $3, version = version + 1
+            SET coffee_rating = $1, ambiance_rating = $2, overall_rating = $3, version = version + 1
             WHERE id = $4 AND version = $5
             RETURNING version
   `

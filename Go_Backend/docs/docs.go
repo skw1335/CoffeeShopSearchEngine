@@ -846,10 +846,10 @@ const docTemplate = `{
         "store.Rating": {
             "type": "object",
             "properties": {
-                "ambiance": {
+                "ambiance_rating": {
                     "type": "integer"
                 },
-                "coffee": {
+                "coffee_rating": {
                     "type": "integer"
                 },
                 "created_at": {
@@ -858,7 +858,7 @@ const docTemplate = `{
                 "id": {
                     "type": "integer"
                 },
-                "overall": {
+                "overall_rating": {
                     "type": "integer"
                 },
                 "shopID": {

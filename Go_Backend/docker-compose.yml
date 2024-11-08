@@ -1,11 +1,11 @@
 
 services:
   db:
-    image:  postgres:15.5
+    image:  postgres:16.4
     container_name: postgres-db
     environment:
       POSTGRES_DB:  coffeeMap
-      POSTGRES_USER: postgres
+      POSTGRES_USER: sam_dev 
       POSTGRES_PASSWORD: ${DB_PASSWORD}
 
     volumes:

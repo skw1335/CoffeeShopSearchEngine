@@ -55,7 +55,7 @@ func (app *application) registerUserHandler(w http.ResponseWriter, r *http.Reque
     Username: payload.Username,
     Email: payload.Email,
     Role : store.Role{
-	name: "user",
+	Name: "user",
 	},
   }
 
